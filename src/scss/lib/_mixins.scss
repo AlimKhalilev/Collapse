@@ -1,0 +1,149 @@
+// === Mixins [ Шаблоны классов стилей, используемых на всех страницах ]===
+
+// используется для одинаковых отступов внутри секций
+
+:root {
+    --section_indent: 3rem;
+    --header-min-height: 5rem;
+
+    @media ($media_sm) {
+        --section_indent: 2rem;
+    }
+}
+
+@mixin cursorPointer { // чтобы на смартфонах не было явного выделения элемента
+    
+    @media ($media_not_sm) {
+        cursor: pointer;
+    }
+}
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    background-color: $color_body_bg;
+    font-size: 16px;
+
+    @media ($media_xl) {
+        font-size: 15px;
+    }
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &.hideScroll {
+        overflow-y: hidden;
+    }
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+
+    &--burger {
+        z-index: 10;
+    }
+
+    &--modal {
+        z-index: 20;
+    }
+
+    &.visible {
+        visibility: visible;
+        opacity: 0.8;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.scroll-block-dummy {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+    visibility: hidden;
+}
+
+.section {
+    margin-top: var(--section_indent);
+
+    &__header {
+        margin-bottom: 1.2rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+    }
+
+    &--footer {
+        margin-top: auto;
+    }
+
+    &--underHeader {
+        margin-top: calc(var(--section_indent) + var(--header-min-height));
+    }
+
+    &--beforeFooter {
+        margin-bottom: var(--section_indent);
+    }
+}
+
+.blockTitle {
+    font-size: 2.2rem;
+    text-align: center;
+
+    @media ($media_sm) {
+        font-size: 1.8rem;
+    }
+}
+
+.imgMax {
+    max-width: 100%;
+}
+
+#easterEgg {
+    --color: #00a0ff;
+    text-align: center;
+    font-size: 7rem;
+    line-height: 1.6;
+    background-color: transparent;
+    box-shadow: unset;
+    padding: 0;
+    color: $color_white;
+    text-shadow:
+        0 0 7px $color_white,
+        0 0 10px $color_white,
+        0 0 21px $color_white,
+        0 0 42px var(--color),
+        0 0 82px var(--color),
+        0 0 92px var(--color),
+        0 0 102px var(--color),
+        0 0 151px var(--color);
+
+    @media ($media_sm) {
+        font-size: 4rem;
+    }
+
+    &.visible {
+        ~ .overlay.visible {
+            opacity: 0.99;
+        }
+    }
+}
+
+// === / Mixins ===

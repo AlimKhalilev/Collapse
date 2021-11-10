@@ -1,0 +1,19 @@
+.details {
+    // .details__header
+
+    &--opened {
+        .details__body {
+            display: block;
+        }
+    }
+
+    &__header {
+        @include cursorPointer;
+    }
+
+    // .details__body
+
+    &__body {
+        display: none;
+    }
+}

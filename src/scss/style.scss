@@ -1,0 +1,174 @@
+@import "./lib/normalize";
+@import "./lib/colors";
+@import "./lib/grid";
+@import "./lib/fonts";
+@import "./lib/swiper";
+@import "./animations/animate";
+@import "./lib/mixins";
+@import "./lib/burger";
+@import "./lib/sprite"; // общий стиль иконок
+@import "./sprite/icons"; // стили иконок, которые генерируются автоматически
+@import "./lib/components";
+
+/* СТИЛИ КОМПОНЕНТОВ (первая буква c- означает custom) */
+
+@import "./components/btn";
+@import "./components/link";
+@import "./components/c-checkbox";
+@import "./components/c-field";
+@import "./components/c-select";
+@import "./components/c-details";
+@import "./components/с-dropdown";
+@import "./components/contentSelect";
+
+@import "modal";
+@import "header";
+@import "footer";
+
+.main {
+
+    // .main__inner
+
+    &__inner {
+
+    }
+
+    // .main__header
+
+    &__header {
+        margin-bottom: 1rem;
+    }
+
+    // .main__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.6rem;
+
+        > *:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    // .main__icons
+
+    &__icons {
+
+    }
+
+    // .main__buttons
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+
+        @media ($media_sm) {
+            flex-direction: column;
+        }
+
+        button:not(:last-child) {
+            margin-right: 0.8rem;
+
+            @media ($media_sm) {
+                margin: 0 0 0.8rem 0;
+            }
+        }
+    }
+
+    // .main__slider
+
+    &__slider {
+
+    }
+}
+
+.slider {
+    position: relative;
+    
+    // .slider__item
+
+    &__item {
+        display: flex;
+        padding: 0.6rem;
+    }
+
+    // .slider__card
+
+    &__card {
+        background-color: $color_primary;
+        color: $color_white;
+        text-align: center;
+        padding: 0.8rem;
+        box-shadow: 0.25rem 0.25rem 0.25rem 0.1rem rgba(34, 34, 34, 0.3);
+
+        img {
+            max-width: 100%;
+            margin-top: 0.8rem;
+        }
+    }
+
+    @media ($media_sm) {
+        .swiper-button {
+            display: none;
+        }
+    }
+}
+
+.scrollBlock {
+
+    // .scrollBlock__inner
+
+    &__inner {
+
+    }
+
+    // .scrollBlock__preview
+
+    &__preview {
+        background-color: $color_primary;
+        color: $color_white;
+        font-size: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 0;
+    }
+}
+
+.animBlock {
+    // .animBlock__items
+
+    &__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 2rem;
+
+        @media ($media_xl) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media ($media_sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .animBlock__item
+
+    &__item {
+        position: relative;
+        background: $color_success;
+        min-height: 12vh;
+        color: $color_white;
+        font-size: 1.2rem;
+        @include cursorPointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

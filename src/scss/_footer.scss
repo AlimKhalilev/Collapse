@@ -1,0 +1,18 @@
+// === Footer [ Стили для футера, используемые на всех страницах ] ===
+
+.footer {
+    background-color: $color_primary;
+    padding: 1.5rem 0;
+    
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    
+        p {
+            color: $color_white;
+        }
+    }
+    
+}
+
+// === / Footer ===

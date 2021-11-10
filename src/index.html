@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+
+		@@include('_head.html', {
+			"title": "starterGulp - Main Page"
+		})
+
+	</head>
+	<body>
+		
+        @@include("_header.html", {
+            "main": "menu__item--active"
+        })
+
+		<section class="section section--underHeader main">
+			<div class="section__inner main__inner">
+
+				<div class="main__header">
+					<h1 class="blockTitle">Привет, это StarterGulp v.<span class="version"></span>!</h1>
+				</div>
+
+				<div class="main__content">
+
+					<!-- <div class="main__icons">
+						<svg class='icon icon-twitter'><use xlink:href='img/sprite.svg#twitter'></use></svg>
+						<svg class='icon icon-arrow-down'><use xlink:href='img/sprite.svg#arrow-down'></use></svg>
+					</div> -->
+
+					<img class="imgMax" src="img/gulp-demo.png" alt="Изображение поля" adaptImg>
+
+					<div class="main__buttons">
+						<button data-modal="modal_success" class="btn btn--primary">Открыть модалку 1</button>
+						<button data-modal="modal_second" class="btn btn--primary">Открыть модалку 2</button>
+					</div>
+
+				</div>
+
+				<div class="main__slider slider">
+
+					<div class="swiper mySwiper">
+						<!-- .swiper-wrapper.slider__item.swiper-slide*8>.slider__card>span{Привет, это слайд №$}+img[src="./img/cat.jpg" alt="Кот"] -->
+						<div class="swiper-wrapper">
+
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №1</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №2</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №3</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №4</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №5</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №6</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №7</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+							<div class="slider__item swiper-slide">
+								<div class="slider__card"><span>Привет, это слайд №8</span><img src="./img/cat.jpg" alt="Кот"></div>
+							</div>
+						
+						</div>
+					</div>
+
+					<div class="swiper-pagination"></div>
+
+					<div class="swiper-button swiper-button-prev"></div>
+					<div class="swiper-button swiper-button-next"></div>
+					
+				</div>
+
+			</div>
+		</section>
+
+		<div class="section animBlock">
+			<div class="section__inner">
+				<div class="section__header">
+					<h2 class="section__title">Блок с анимациями (при скролле и наведении)</h2>
+				</div>
+
+				<div class="animBlock__items">
+					<div class="animBlock__item animated slow" data-animation="bounce">bounce</div>
+					<div class="animBlock__item animated slow" data-animation="flash">flash</div>
+					<div class="animBlock__item animated slow" data-animation="pulse">pulse</div>
+					<div class="animBlock__item animated slow" data-animation="rubberBand">rubberBand</div>
+					<div class="animBlock__item animated slow" data-animation="headShake">headShake</div>
+					<div class="animBlock__item animated slow" data-animation="swing">swing</div>
+					<div class="animBlock__item animated slow" data-animation="tada">tada</div>
+					<div class="animBlock__item animated slow" data-animation="wobble">wobble</div>
+				</div>
+
+			</div>
+		</div>
+
+		<section class="section section--beforeFooter scrollBlock">
+			<div class="section__inner scrollBlock__inner">
+				<div class="scrollBlock__preview">Это блок скролла</div>
+			</div>
+		</section>
+
+		@@include("_footer.html")
+
+	</body>
+</html>
