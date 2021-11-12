@@ -1,0 +1,15 @@
+<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.05" cx="55.1892" cy="55.1892" r="34.1892" fill="url(#paint0_linear_469_614)"/>
+<circle opacity="0.1" cx="55" cy="55" r="43.5" stroke="#FF7F23"/>
+<circle opacity="0.05" cx="55" cy="55" r="54.5" stroke="#FF7F23"/>
+<rect x="30" y="30" width="50" height="50" rx="25" fill="#FF7F23" fill-opacity="0.1"/>
+<path d="M55 65C60.5228 65 65 60.5228 65 55C65 49.4772 60.5228 45 55 45C49.4772 45 45 49.4772 45 55C45 60.5228 49.4772 65 55 65Z" stroke="#FF7F23" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M45 55H65" stroke="#FF7F23" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 45C57.5013 47.7384 58.9228 51.292 59 55C58.9228 58.708 57.5013 62.2616 55 65C52.4987 62.2616 51.0772 58.708 51 55C51.0772 51.292 52.4987 47.7384 55 45V45Z" stroke="#FF7F23" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_469_614" x1="21.2645" y1="21" x2="81.4859" y2="90.226" gradientUnits="userSpaceOnUse">
+<stop stop-color="#678CA3"/>
+<stop offset="1" stop-color="#6A8EA4"/>
+</linearGradient>
+</defs>
+</svg>

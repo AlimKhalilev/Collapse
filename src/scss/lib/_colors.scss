@@ -2,20 +2,41 @@
 
 $color_black_main: #222;
 $color_body_bg: #E5E5E5;
-$color_header: #fff;
 $color_primary: tomato;
 //$color_primary: #3E54D8;
 
+$color_header: #1c1e28;
+$color_bg_main: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%);
+$color_bg_advantages: #171B25;
+$color_bg_footer: #13161F;
+$color_bg_gui: linear-gradient(180deg, #171A25 0%, #151823 100%);
+$color_bg_checkbox: rgba(149, 98, 238, 0.25);
+
+$color_scroll_bg: #222530;
+
+$color_text: #515B76;
+$color_text_secondary: #9FA4B0;
+
+$color_purple: #9562EE;
+$color_purple_hover: #605EBA;
+
+$color_secondary: #2C303C;
+$color_secondary_hover: #515B76;
+
+$color_success: #80A063;
+$color_success_hover: #66814F;
+
 $color_danger: #ED6373;
 $color_warning: #F3B63F;
-$color_success: #199F27;
 $color_info: #8C9BEA;
-$color_secondary: #929398;
 $color_dark: #373943;
-$color_white: #FFFFFF;
+$color_white: #EEEDF6;
 
 $color_burger_show: #222222;
 $color_burger_close: #666666;
 
-$color_slider_dot: #ffa3a3;
-$color_slider_dot_active: #813b3b;
+$color_baseCard__bg: #191D28; 
+$color_baseCard__bg_hover: #222736;
+$color_baseCard__title: #D8DEEC;
+$color_baseCard__subtitle: #838897;
+$color_baseCard__text: #565D73;

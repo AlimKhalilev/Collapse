@@ -4,7 +4,7 @@
 
 :root {
     --section_indent: 3rem;
-    --header-min-height: 5rem;
+    --header-min-height: 5.5rem;
 
     @media ($media_sm) {
         --section_indent: 2rem;
@@ -20,9 +20,10 @@
 
 html, body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
-    background-color: $color_body_bg;
+    line-height: 1.75;
+    background-color: $color_bg_advantages;
     font-size: 16px;
+    color: $color_text;
 
     @media ($media_xl) {
         font-size: 15px;
@@ -35,6 +36,20 @@ html, body {
     &.hideScroll {
         overflow-y: hidden;
     }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color_scroll_bg;
+    }
+    
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+        background-color: $color_scroll_bg;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $color_purple;
+    }
+
 }
 
 .overlay {
@@ -43,7 +58,7 @@ html, body {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #000;
+    background-color: rgb(26, 30, 41);
     opacity: 0;
     visibility: hidden;
     transition: 0.3s ease-in-out;
@@ -58,7 +73,7 @@ html, body {
 
     &.visible {
         visibility: visible;
-        opacity: 0.8;
+        opacity: 0.78;
     }
 }
 
@@ -77,6 +92,11 @@ html, body {
     height: 50px;
     overflow: scroll;
     visibility: hidden;
+
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+        background-color: $color_scroll_bg;
+    }
 }
 
 .section {

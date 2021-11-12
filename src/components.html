@@ -17,7 +17,7 @@
                         <label class="input-group__elem c-checkbox">
                             <input class="c-checkbox__input visually-hidden" type="checkbox" />
                             <div class="c-checkbox__box">
-                                <svg class="c-checkbox__icon icon icon-check_bold"><use xlink:href="img/sprite.svg#check_bold"></use></svg>
+                                <svg class="c-checkbox__icon icon icon-check_basic"><use xlink:href="img/sprite.svg#check_basic"></use></svg>
                             </div>
                             <span class="c-checkbox__text">Выбери меня!</span>
                         </label>
@@ -83,15 +83,19 @@
                         </div>
 
                         <div class="input-group__elem">
-                            <button class="btn btn--primary">Кнопка базовая</button>
+                            <button class="btn btn--primary">View products</button>
                         </div>
 
                         <div class="input-group__elem">
-                            <a href="#" class="btn btn--primary">Кнопка-ссылка базовая</a>
+                            <a href="#" class="btn btn--primary">View products</a>
                         </div>
 
                         <div class="input-group__elem">
-                            <button class="btn btn--success">Кнопка успешная!</button>
+                            <a href="#" class="btn btn--secondary">View products</a>
+                        </div>
+
+                        <div class="input-group__elem">
+                            <button class="btn btn--success">Buy subscription</button>
                         </div>
 
                         <div class="input-group__elem">
@@ -330,38 +334,96 @@
                             
 						</div>
 
-						<!-- <div class="input-group__elem contentSelect" data-contentSelect>
-                            <div class="contentSelect__header contentSelect__container">
-                                <div class="contentSelect__item">
-                                    <img class="contentSelect__img" src="./img/contentSelect/RU.svg" alt="Флаг России">
-                                    <span class="contentSelect__text">RU</span>
+
+                    </div>
+                </div>
+
+                <div class="components__elem">
+                    <div class="baseCard" style="--bg-image: url(../img/baseCard_bg.svg);">
+                        <div class="baseCard__container">
+                            <div class="baseCard__header">
+                                <h3 class="baseCard__title">10$</h3>
+                                <span class="baseCard__subtitle">1 day</span>
+                            </div>
+                            <div class="baseCard__body">
+                                <div class="baseCard__items">
+                                    <div class="baseCard__item">
+                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс">
+                                        <span class="baseCard__itemText">Access to all functionality</span>
+                                    </div>
+                                    <div class="baseCard__item">
+                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс">
+                                        <span class="baseCard__itemText">Quick support assistance</span>
+                                    </div>
+                                    <div class="baseCard__item">
+                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс">
+                                        <span class="baseCard__itemText">Undeniable advantage</span>
+                                    </div>
+                                </div>
+                                <div class="baseCard__btn">
+                                    <a href="#" class="btn btn--secondary">Buy now</a>
                                 </div>
                             </div>
-                            <div class="contentSelect__body contentSelect__container">
-                                <label class="contentSelect__label">
-                                    <input class="contentSelect__radio visually-hidden" type="radio" name="contentSelect" checked>
-                                    <div class="contentSelect__item">
-                                        <img class="contentSelect__img" src="./img/contentSelect/RU.svg" alt="Флаг России">
-                                        <span class="contentSelect__text">RU</span>
-                                    </div>
-                                </label>
-                                <label class="contentSelect__label">
-                                    <input class="contentSelect__radio visually-hidden" type="radio" name="contentSelect">
-                                    <div class="contentSelect__item">
-                                        <img class="contentSelect__img" src="./img/contentSelect/UA.svg" alt="Флаг Украины">
-                                        <span class="contentSelect__text">UA</span>
-                                    </div>
-                                </label>
-                                <label class="contentSelect__label">
-                                    <input class="contentSelect__radio visually-hidden" type="radio" name="contentSelect">
-                                    <div class="contentSelect__item">
-                                        <img class="contentSelect__img" src="./img/contentSelect/US.svg" alt="Флаг Америки">
-                                        <span class="contentSelect__text">USA</span>
-                                    </div>
-                                </label>
-                            </div>
-						</div> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="components__elem">
+                    <div class="advantageRocket">
+                        <div class="advantageRocket__overlay">
+                            <img class="advantageRocket__bg imgMax" src="./img/advantageRocketOverlay.svg" alt="Фон ракеты">
 
+                            <div class="advantageRocket__icon">
+                                <img class="advantageRocket__gif imgMax" src="./img/advantageRocket.gif" alt="Гифка ракеты">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="components__elem">
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_aimbot.svg" alt="Иконка функционала">
+                            <h3 class="advanceCard__anim advanceCard__title">Aimbot</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="components__elem">
+                    <div class="baseHeader">
+                        <h2 class="baseHeader__title">Our advantages</h2>
+                        <span class="baseHeader__descr">Our qualities that distinguish us from other products</span>
+                    </div>
+                </div>
+
+                <div class="components__elem">
+                    <div class="baseHeader baseHeader--main">
+                        <span class="baseHeader__subtitle">Welcome to</span>
+                        <h1 class="baseHeader__title">Collapse project</h1>
+                        <span class="baseHeader__descr">The best private cheats for popular games from experienced developers!</span>
+                    </div>
+                </div>
+
+                <div class="components__elem">
+                    <div class="baseHeader">
+                        <h2 class="baseHeader__title">Collapse GUI</h2>
+                        <span class="baseHeader__descr">You can click the <span class="baseHeader__accent">"Player"</span> tab and see how it works in the game, using the example of the game <span class="baseHeader__accent">Rust</span></span>
+                    </div>
+                </div>
+
+                <div class="components__elem">
+                    <div class="community">
+                        <div class="community__img">
+                            <img src="./img/community_icon.svg" alt="Иконка community">
+                        </div>
+                        <div class="community__header baseHeader">
+                            <h2 class="baseHeader__title">Collapse Community</h2>
+                            <span class="baseHeader__descr">Join our community on the forum. Click on the link below and get news, share your information. We work for you!</span>
+                        </div>
+                        <div class="community__btn">
+                            <a href="#" class="btn btn--secondary">Visit the forum</a>
+                        </div>
                     </div>
                 </div>
 

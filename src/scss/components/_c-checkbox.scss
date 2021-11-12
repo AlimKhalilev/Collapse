@@ -41,18 +41,22 @@
         &:checked {
 
             ~ .c-checkbox__box {
-                background-color: $color_primary;
-                border-color: $color_primary;
+                background-color: $color_bg_checkbox;
+                border-color: $color_purple;
 
                 .c-checkbox__icon {
-                    fill: $color_white;
+                    fill: $color_purple;
                 }
+            }
+
+            ~ .c-checkbox__text {
+                color: $color_purple;
             }
         }
 
         &:focus, &:hover {
             ~ .c-checkbox__box {
-                box-shadow: 0 0 0.5rem $color_secondary;
+                
             }
         }
 
@@ -61,10 +65,10 @@
     // .c-checkbox__box
 
     &__box {
-        width: 1.4rem;
-        height: 1.4rem;
-        border: 2px solid $color_secondary;
-        border-radius: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid $color_text;
+        border-radius: 0.125rem;
 
         display: flex;
         align-items: center;
@@ -74,14 +78,16 @@
     // .c-checkbox__icon
 
     &__icon {
-        font-size: 0.9rem;
+        font-size: 0.5rem;
         fill: transparent;
     }
 
     // .c-checkbox__text
 
     &__text {
-        margin-left: 0.5rem;
+        margin-left: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
         line-height: 1;
     }
 }
