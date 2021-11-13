@@ -19,8 +19,8 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style type="text/css">
-	.svg-arrow-down-dims { width: 16px; height: 16px; }
 	.svg-arrow-left-dims { width: 16px; height: 16px; }
+	.svg-arrow_down-dims { width: 8px; height: 5px; }
 	.svg-check-dims { width: 16px; height: 16px; }
 	.svg-check_basic-dims { width: 11px; height: 8px; }
 	.svg-check_bold-dims { width: 16px; height: 16px; }
@@ -52,8 +52,8 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
-		<symbol viewBox="0 0 451.847 451.847" id="arrow-down" xmlns="http://www.w3.org/2000/svg"><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"/></symbol>
 		<symbol viewBox="0 0 512 512" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path d="M492 236H68.442l70.164-69.824c7.829-7.792 7.859-20.455.067-28.284-7.792-7.83-20.456-7.859-28.285-.068l-104.504 104-.018.019c-7.809 7.792-7.834 20.496-.002 28.314l.018.019 104.504 104c7.828 7.79 20.492 7.763 28.285-.068 7.792-7.829 7.762-20.492-.067-28.284L68.442 276H492c11.046 0 20-8.954 20-20s-8.954-20-20-20z"/></symbol>
+		<symbol viewBox="0 0 8 5" id="arrow_down" xmlns="http://www.w3.org/2000/svg"><path d="M7 1L4 4 1 1"/></symbol>
 		<symbol viewBox="0 0 512 512" id="check" xmlns="http://www.w3.org/2000/svg"><path d="M504.502 75.496c-9.997-9.998-26.205-9.998-36.204 0L161.594 382.203 43.702 264.311c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.994 135.992c9.994 9.997 26.214 9.99 36.204 0L504.502 111.7c9.998-9.997 9.997-26.206 0-36.204z"/></symbol>
 		<symbol viewBox="0 0 11 8" id="check_basic" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 6.433L1.226 4.408a.58.58 0 10-.823.823l2.439 2.438a.58.58 0 00.822 0l6.172-6.171a.58.58 0 10-.823-.823L3.25 6.433z"/></symbol>
 		<symbol viewBox="0 -46 417.813 417" id="check_bold" xmlns="http://www.w3.org/2000/svg"><path d="M159.988 318.582c-3.988 4.012-9.43 6.25-15.082 6.25s-11.094-2.238-15.082-6.25L9.375 198.113c-12.5-12.5-12.5-32.77 0-45.246l15.082-15.086c12.504-12.5 32.75-12.5 45.25 0l75.2 75.203L348.104 9.781c12.504-12.5 32.77-12.5 45.25 0l15.082 15.086c12.5 12.5 12.5 32.766 0 45.246zm0 0"/></symbol>
@@ -92,17 +92,6 @@ embedded above. They may be styled via CSS.
 			<h3>A) Inline SVG with embedded sprite</h3>
 			<ul>
 
-				<li title="arrow-down">
-					<div class="icon-box">
-						
-						<!-- arrow-down -->
-						<svg class="svg-arrow-down-dims">
-							<use xlink:href="#arrow-down"></use>
-						</svg>
-						
-					</div>
-					<h2>arrow-down</h2>
-				</li>
 				<li title="arrow-left">
 					<div class="icon-box">
 						
@@ -113,6 +102,17 @@ embedded above. They may be styled via CSS.
 						
 					</div>
 					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow_down">
+					<div class="icon-box">
+						
+						<!-- arrow_down -->
+						<svg class="svg-arrow_down-dims">
+							<use xlink:href="#arrow_down"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow_down</h2>
 				</li>
 				<li title="check">
 					<div class="icon-box">
@@ -234,17 +234,6 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
 			<ul>
 				
-				<li title="arrow-down">
-					<div class="icon-box">
-						
-						<!-- arrow-down -->
-						<svg class="svg-arrow-down-dims">
-							<use xlink:href="../sprite.svg#arrow-down"></use>
-						</svg>
-						
-					</div>
-					<h2>arrow-down</h2>
-				</li>
 				<li title="arrow-left">
 					<div class="icon-box">
 						
@@ -255,6 +244,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 						
 					</div>
 					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow_down">
+					<div class="icon-box">
+						
+						<!-- arrow_down -->
+						<svg class="svg-arrow_down-dims">
+							<use xlink:href="../sprite.svg#arrow_down"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow_down</h2>
 				</li>
 				<li title="check">
 					<div class="icon-box">
@@ -363,7 +363,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Fri, 12 Nov 2021 13:04:07 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Sat, 13 Nov 2021 19:19:18 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

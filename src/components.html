@@ -4,9 +4,7 @@
         @@include('_head.html', { "title": "starterGulp - Компоненты" })
     </head>
     <body>
-        @@include("_header.html", {
-            "components": "menu__item--active"
-        })
+        @@include("_header.html", { "components": "menu__item--active" })
 
         <section class="section section--underHeader section--beforeFooter components">
             <div class="section__inner components__inner">
@@ -58,19 +56,12 @@
                     <span class="input-group__label">Links</span>
 
                     <div class="input-group__elems">
+                        <a class="input-group__elem link" href="#">Forum</a>
 
-                        <a class="input-group__elem link" href="#">Перейти куда-то</a>
-
-                        <a class="input-group__elem link" href="#here">
-                            <svg class='icon icon-arrow-left link__icon'><use xlink:href='img/sprite.svg#arrow-left'></use></svg>
-                            <span class="link__text">Вернуться обратно</span>
+                        <a class="input-group__elem link" href="#">
+                            <span class="link__text">Our products</span>
+                            <svg class="link__icon link__icon--right link__icon--arrow"><use xlink:href="img/main.svg#arrow_down"></use></svg>
                         </a>
-
-                        <a class="input-group__elem link" href="#letsgo">
-                            <span class="link__text">Найти что-нибудь</span>
-                            <svg class='icon icon-arrow-left link__icon link__icon--right'><use xlink:href='img/sprite.svg#loupe'></use></svg>
-                        </a>
-
                     </div>
                 </div>
 
@@ -207,20 +198,19 @@
                     <span class="input-group__label">Custom select</span>
 
                     <div class="input-group__elems">
+                        <div class="input-group__elem">
+                            <div class="c-select" data-customSelect data-mouseLeave>
+                                <svg class="c-select__icon icon icon-arrow-down"><use xlink:href="img/sprite.svg#arrow-down"></use></svg>
+                                <select name="select">
+                                    <option value="value1">Значение 1</option>
+                                    <option value="value2" selected>Значение 2</option>
+                                    <option value="value3" disabled>Значение 3</option>
+                                    <option value="value4">Значение 4</option>
+                                </select>
+                            </div>
+                        </div>
 
-						<div class="input-group__elem">
-							<div class="c-select" data-customSelect data-mouseLeave>
-								<svg class='c-select__icon icon icon-arrow-down'><use xlink:href='img/sprite.svg#arrow-down'></use></svg>
-								<select name="select">
-									<option value="value1">Значение 1</option>
-									<option value="value2" selected>Значение 2</option>
-									<option value="value3" disabled>Значение 3</option>
-									<option value="value4">Значение 4</option>
-								</select>
-							</div>
-						</div>
-
-						<!-- <div class="c-select">
+                        <!-- <div class="c-select">
 							<div class="c-select__inner c-select__inner--open"> 
 								<div class="c-select__container c-select__header">
 									<span class="c-select__title">Значение 1</span>
@@ -235,7 +225,6 @@
 								</div>
 							</div>
 						</div> -->
-
                     </div>
                 </div>
 
@@ -243,28 +232,23 @@
                     <span class="input-group__label">Details block</span>
 
                     <div class="input-group__elems">
-
-						<div class="input-group__elem details" data-details>
-                            <div class="details__header">
-                                Нажми, и кое-что откроется!
-                            </div>
+                        <div class="input-group__elem details" data-details>
+                            <div class="details__header">Нажми, и кое-что откроется!</div>
                             <div class="details__body">
                                 Очень очень важная информация!!
-                                <br>
+                                <br />
                                 Очень очень важная информация!!
-                                <br>
+                                <br />
                                 Очень очень важная информация!!
-                                <br>
+                                <br />
                                 Очень очень важная информация!!
-                                <br>
+                                <br />
                                 Очень очень важная информация!!
                             </div>
-						</div>
+                        </div>
 
                         <div class="input-group__elem details" data-details>
-                            <div class="details__header">
-                                Нажми, и кое-что откроется!
-                            </div>
+                            <div class="details__header">Нажми, и кое-что откроется!</div>
                             <div class="details__body">
                                 <div class="input-group__elem">
                                     <button class="btn btn--primary">
@@ -273,30 +257,24 @@
                                     </button>
                                 </div>
                             </div>
-						</div>
-
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="components__elem input-group">
                     <span class="input-group__label">Dropdown block</span>
 
                     <div class="input-group__elems">
-
                         <div class="input-group__elem">
                             <div class="dropdown" data-dropdown data-mouseLeave>
                                 <div class="dropdown__header">
-                                    <button class="btn btn--primary">
-                                        Кликни на меня
-                                    </button>
+                                    <button class="btn btn--primary">Кликни на меня</button>
                                 </div>
                                 <div class="dropdown__body">
                                     <div class="content-box">Привет, тут какое-то содержание с огромным текстом, лучше нужно было использовать lorem!</div>
                                 </div>
                             </div>
-						</div>
-
+                        </div>
                     </div>
                 </div>
 
@@ -304,9 +282,7 @@
                     <span class="input-group__label">Custom select content block</span>
 
                     <div class="input-group__elems">
-
                         <div class="input-group__elem contentSelect" data-contentSelect="selectCountry" data-mouseLeave>
-
                             <svg class="contentSelect__icon icon icon-arrow-down"><use xlink:href="img/sprite.svg#arrow-down"></use></svg>
 
                             <div class="contentSelect__item" disabled checked>
@@ -315,31 +291,28 @@
 
                             <div class="contentSelect__item">
                                 <div class="contentSelect__picture">
-                                    <img class="contentSelect__img" src="./img/contentSelect/RU.svg" alt="Флаг России">
+                                    <img class="contentSelect__img" src="./img/contentSelect/RU.svg" alt="Флаг России" />
                                 </div>
                                 <span class="contentSelect__text">RU</span>
                             </div>
                             <div class="contentSelect__item">
                                 <div class="contentSelect__picture">
-                                    <img class="contentSelect__img" src="./img/contentSelect/UA.svg" alt="Флаг Украины">
+                                    <img class="contentSelect__img" src="./img/contentSelect/UA.svg" alt="Флаг Украины" />
                                 </div>
                                 <span class="contentSelect__text">UA</span>
                             </div>
                             <div class="contentSelect__item">
                                 <div class="contentSelect__picture">
-                                    <img class="contentSelect__img" src="./img/contentSelect/US.svg" alt="Флаг Америки">
+                                    <img class="contentSelect__img" src="./img/contentSelect/US.svg" alt="Флаг Америки" />
                                 </div>
                                 <span class="contentSelect__text">USA</span>
                             </div>
-                            
-						</div>
-
-
+                        </div>
                     </div>
                 </div>
 
                 <div class="components__elem">
-                    <div class="baseCard" style="--bg-image: url(../img/baseCard_bg.svg);">
+                    <div class="baseCard" style="--bg-image: url(../img/baseCard_bg.svg)">
                         <div class="baseCard__container">
                             <div class="baseCard__header">
                                 <h3 class="baseCard__title">10$</h3>
@@ -348,15 +321,15 @@
                             <div class="baseCard__body">
                                 <div class="baseCard__items">
                                     <div class="baseCard__item">
-                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс">
+                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс" />
                                         <span class="baseCard__itemText">Access to all functionality</span>
                                     </div>
                                     <div class="baseCard__item">
-                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс">
+                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс" />
                                         <span class="baseCard__itemText">Quick support assistance</span>
                                     </div>
                                     <div class="baseCard__item">
-                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс">
+                                        <img class="baseCard__itemImg" src="./img/baseCard_icon_add.svg" alt="Иконка плюс" />
                                         <span class="baseCard__itemText">Undeniable advantage</span>
                                     </div>
                                 </div>
@@ -367,14 +340,14 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="components__elem">
                     <div class="advantageRocket">
                         <div class="advantageRocket__overlay">
-                            <img class="advantageRocket__bg imgMax" src="./img/advantageRocketOverlay.svg" alt="Фон ракеты">
+                            <img class="advantageRocket__bg imgMax" src="./img/advantageRocketOverlay.svg" alt="Фон ракеты" />
 
                             <div class="advantageRocket__icon">
-                                <img class="advantageRocket__gif imgMax" src="./img/advantageRocket.gif" alt="Гифка ракеты">
+                                <img class="advantageRocket__gif imgMax" src="./img/advantageRocket.gif" alt="Гифка ракеты" />
                             </div>
                         </div>
                     </div>
@@ -383,7 +356,7 @@
                 <div class="components__elem">
                     <div class="advanceCard">
                         <div class="advanceCard__content">
-                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_aimbot.svg" alt="Иконка функционала">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_aimbot.svg" alt="Иконка функционала" />
                             <h3 class="advanceCard__anim advanceCard__title">Aimbot</h3>
                             <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
                         </div>
@@ -408,14 +381,17 @@
                 <div class="components__elem">
                     <div class="baseHeader">
                         <h2 class="baseHeader__title">Collapse GUI</h2>
-                        <span class="baseHeader__descr">You can click the <span class="baseHeader__accent">"Player"</span> tab and see how it works in the game, using the example of the game <span class="baseHeader__accent">Rust</span></span>
+                        <span class="baseHeader__descr"
+                            >You can click the <span class="baseHeader__accent">"Player"</span> tab and see how it works in the game, using the example of the game
+                            <span class="baseHeader__accent">Rust</span></span
+                        >
                     </div>
                 </div>
 
                 <div class="components__elem">
                     <div class="community">
                         <div class="community__img">
-                            <img src="./img/community_icon.svg" alt="Иконка community">
+                            <img src="./img/community_icon.svg" alt="Иконка community" />
                         </div>
                         <div class="community__header baseHeader">
                             <h2 class="baseHeader__title">Collapse Community</h2>
@@ -425,6 +401,70 @@
                             <a href="#" class="btn btn--secondary">Visit the forum</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="components__elem">
+                    <nav class="menu-games-container">
+                        <ul id="games-menu" class="menu menu--footer">
+                            <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-games menu-item-56">
+                                <a href="https://collapse.thechampguess.ru/games/rust/">Rust</a>
+                            </li>
+                            <li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-games menu-item-68">
+                                <a href="https://collapse.thechampguess.ru/games/valorant/">Valorant</a>
+                            </li>
+                            <li id="menu-item-69" class="menu-item menu-item-type-post_type menu-item-object-games menu-item-69">
+                                <a href="https://collapse.thechampguess.ru/games/apex-legends/">Apex Legends</a>
+                            </li>
+                            <li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-games menu-item-70">
+                                <a href="https://collapse.thechampguess.ru/games/escape-from-tarkov/">Escape From Tarkov</a>
+                            </li>
+                            <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-games current-menu-item menu-item-71">
+                                <a href="https://collapse.thechampguess.ru/games/dead-by-daylight/" aria-current="page">Dead by daylight</a>
+                            </li>
+                            <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-games menu-item-72">
+                                <a href="https://collapse.thechampguess.ru/games/rust/">Rust</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="components__elem">
+                    <nav class="menu-social-container">
+                        <ul id="primary-menu" class="menu menu--social">
+                            <li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15">
+                                <a href="https://vk.com/" class="menu-image-title-hide menu-image-hovered">
+                                    <span class="menu-image-title-hide menu-image-title">VK</span>
+                                    <span class="menu-image-hover-wrapper">
+                                        <img width="22" height="14" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_social_vk.svg" class="menu-image menu-image-title-hide" alt="" loading="lazy"><img width="22" height="14" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_vk_hover.svg" class="hovered-image menu-image-title-hide" alt="Иконка ВК" loading="lazy" style="margin-left: -22px;">
+                                    </span>
+                                </a>
+                            </li>
+                            <li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42">
+                                <a href="#telegram" class="menu-image-title-hide menu-image-hovered">
+                                    <span class="menu-image-title-hide menu-image-title">Telegram</span>
+                                    <span class="menu-image-hover-wrapper">
+                                        <img width="20" height="16" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_telegram.svg" class="menu-image menu-image-title-hide" alt="Иконка телеграма" loading="lazy"><img width="20" height="16" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_telegram_hover.svg" class="hovered-image menu-image-title-hide" alt="" loading="lazy" style="margin-left: -20px;">
+                                    </span>
+                                </a>
+                            </li>
+                            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46">
+                                <a href="#discord" class="menu-image-title-hide menu-image-hovered">
+                                    <span class="menu-image-title-hide menu-image-title">Discord</span>
+                                    <span class="menu-image-hover-wrapper">
+                                        <img width="22" height="16" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_discord.svg" class="menu-image menu-image-title-hide" alt="Иконка Дискода" loading="lazy"><img width="22" height="16" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_discord_hover.svg" class="hovered-image menu-image-title-hide" alt="Иконка Дискода" loading="lazy" style="margin-left: -22px;">
+                                    </span>
+                                </a>
+                            </li>
+                            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47">
+                                <a href="#youtube" class="menu-image-title-hide menu-image-hovered">
+                                    <span class="menu-image-title-hide menu-image-title">YouTube</span>
+                                    <span class="menu-image-hover-wrapper">
+                                        <img width="22" height="16" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_youtube.svg" class="menu-image menu-image-title-hide" alt="Иконка Ютуба" loading="lazy"><img width="22" height="16" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/icon_youtube_hover.svg" class="hovered-image menu-image-title-hide" alt="Иконка Ютуба" loading="lazy" style="margin-left: -22px;">
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
             </div>
