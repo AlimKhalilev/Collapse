@@ -1,6 +1,10 @@
 .menu {
     display: inline-flex;
 
+    .menu-item {
+        display: flex;
+    }
+
     .current-menu-item {
         a {
             outline: none;
@@ -26,6 +30,14 @@
         }
     }
 
+    &--header {
+        .menu-item {
+            &:not(:last-child) {
+                margin-right: 3.5rem;
+            }
+        }
+    }
+
     a {
         $color_link: $color_text_secondary;
 
@@ -47,6 +59,30 @@
             outline: none;
             color: $color_purple;
         }
+
+        .menu-image-title-before.menu-image-title {
+            padding: 0;
+        }
+
+        &.menu-image-title-after {
+            span.menu-image-hover-wrapper {
+                display: flex;
+                padding: 0;
+    
+            }
+        }
+
+    }
+
+    .accent_success {
+        a {
+            transition: 0.15s ease-in-out;
+            color: $color_undetected;
+
+            &:hover {
+                color: $color_purple;
+            }
+        }       
     }
 }
 

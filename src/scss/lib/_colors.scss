@@ -5,12 +5,24 @@ $color_body_bg: #E5E5E5;
 $color_primary: tomato;
 //$color_primary: #3E54D8;
 
+$color_light: #ACB2C4;
+$color_feature_title: rgba(103, 109, 123, 0.8);
+
+$color_undetected: #89CC98;
+$color_updating: #5EA7EA;
+$color_detected: #D34145;
+$color_developing: #64D1D2;
+
+
 $color_header: #1c1e28;
 $color_bg_main: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%);
 $color_bg_advantages: #171B25;
 $color_bg_footer: #13161F;
 $color_bg_gui: linear-gradient(180deg, #171A25 0%, #151823 100%);
 $color_bg_checkbox: rgba(149, 98, 238, 0.25);
+$color_block_border: rgba(196, 196, 196, 0.04);
+
+
 
 $color_scroll_bg: #222530;
 
@@ -32,8 +44,8 @@ $color_info: #8C9BEA;
 $color_dark: #373943;
 $color_white: #EEEDF6;
 
-$color_burger_show: #222222;
-$color_burger_close: #666666;
+$color_burger_show: $color_text;
+$color_burger_close: $color_text;
 
 $color_baseCard__bg: #191D28; 
 $color_baseCard__bg_hover: #222736;

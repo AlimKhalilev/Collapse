@@ -3,11 +3,12 @@
 // используется для одинаковых отступов внутри секций
 
 :root {
-    --section_indent: 3rem;
+    --section_indent: 6rem;
     --header-min-height: 5.5rem;
 
     @media ($media_sm) {
-        --section_indent: 2rem;
+        --section_indent: 3.75rem;
+        --header-min-height: 4.125rem;
     }
 }
 
@@ -26,7 +27,7 @@ html, body {
     color: $color_text;
 
     @media ($media_xl) {
-        font-size: 15px;
+        //font-size: 15px;
     }
 
     min-height: 100vh;
@@ -163,6 +164,22 @@ html, body {
         ~ .overlay.visible {
             opacity: 0.99;
         }
+    }
+}
+
+.custom-logo-link {
+    display: inline-block;
+}
+
+.mobHidden {
+    @media ($media_sm) {
+        display: none;
+    }
+}
+
+.deskHidden {
+    @media ($media_not_sm) {
+        display: none;
     }
 }
 

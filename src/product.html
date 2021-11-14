@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        @@include('_head.html', { "title": "starterGulp - Компоненты" })
+    </head>
+    <body>
+        @@include("_header.html", { "components": "menu__item--active" })
+
+        <section class="functional">
+            <div class="section__inner components__inner">
+                <div class="functional__header">
+                    <div class="baseHeader baseHeader--left">
+                        <h2 class="baseHeader__title">Functional</h2>
+                        <span class="baseHeader__descr">Full description of the functionality on our forum</span>
+
+                        <div class="functional__btnAbsolute mobHidden">
+                            <a href="#" class="btn btn--secondary">Go to forum</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="functional__cards">
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_aimbot.svg" alt="Иконка функционала" />
+                            <h3 class="advanceCard__anim advanceCard__title">Aimbot</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_loot.svg" alt="Иконка функционала" />
+                            <h3 class="advanceCard__anim advanceCard__title">Loot</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_colors.svg" alt="Иконка функционала" />
+                            <h3 class="advanceCard__anim advanceCard__title">Colors</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_misc.svg" alt="Иконка функционала" />
+                            <h3 class="advanceCard__anim advanceCard__title">Misc</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_exit.svg" alt="Иконка функционала" />
+                            <h3 class="advanceCard__anim advanceCard__title">Exit</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                    <div class="advanceCard">
+                        <div class="advanceCard__content">
+                            <img class="advanceCard__anim advanceCard__img" src="./img/functional/functional_player.svg" alt="Иконка функционала" />
+                            <h3 class="advanceCard__anim advanceCard__title">Player</h3>
+                            <p class="advanceCard__anim advanceCard__descr">We have extensive experience in cheat making, we work quickly and efficiently</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="functional__btn deskHidden">
+                    <a href="#" class="btn btn--secondary">Go to forum</a>
+                </div>
+            </div>
+        </section>
+
+        @@include("_footer.html")
+
+    </body>
+</html>

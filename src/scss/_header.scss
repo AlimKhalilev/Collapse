@@ -3,7 +3,7 @@
 .header {
     background-color: $color_header;
     box-shadow: 0 0 1.25rem 0 rgba(0,0,0,0.1);
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     z-index: 11;
@@ -32,6 +32,11 @@
     // .header__logo
 
     &__logo {
+        @media ($media_not_sm) {
+            padding-right: 1.75rem;
+            margin-right: 1.75rem;
+            border-right: 1px solid $color_block_border;
+        }
 
         @media ($media_sm) {
             display: flex;
@@ -41,6 +46,52 @@
 
             width: 90%;
             margin: 0 auto;
+
+            .custom-logo-link {
+                transform: translateX(-22px);
+            }
+        }
+
+        .languages {
+            @media ($media_not_sm) {
+                display: none;
+            }
+        }
+
+    }
+
+    // .header__navs
+
+    &__navs {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        @media ($media_sm) {
+            display: none;
+        }
+    }
+
+    // .header__dropdown
+
+    &__dropdown {
+
+        @media ($media_not_sm) {
+            display: none;
+        }
+
+        width: 90%;
+        margin: 1.75rem auto;
+        max-height: 70vh;
+        overflow-y: auto;
+
+        .footer__menuTitle {
+            display: block;
+        }
+
+        .menu a {
+            font-size: 1rem;
         }
     }
 
@@ -50,14 +101,21 @@
         display: flex;
         align-items: center;
 
+        @media ($media_not_sm) {
+            flex-basis: 100%;
+        }
+
         @media ($media_sm) {
             flex-direction: column;
             align-items: flex-start;
             margin: 0 auto calc(var(--header-min-height) / 3);
 
+            background: rgba(25, 28, 37, 0.94);
+            backdrop-filter: blur(25px);
+
             &[data-burger='menu'] {
                 display: none; // если бургер меню активно
-                width: 90%;
+                width: 100%;
             }
         }
     }
@@ -85,14 +143,8 @@
     }
 }
 
-.logo {
-
+.custom-logo-link {
     display: flex;
-    width: 14rem;
-
-    picture {
-        display: inline-flex;
-    }
 
     // .logo__icon
 
