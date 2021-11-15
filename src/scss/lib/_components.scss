@@ -213,7 +213,7 @@
     &:hover {
 
         .advanceCard__img {
-            transform: translateY(-0.5rem) rotate(180deg) scale(0.85);
+            transform: translateY(-0.5rem) rotate(360deg) scale(0.85);
         }
 
         .advanceCard__title {
@@ -269,15 +269,15 @@
     display: inline-block;
     max-width: 23rem;
 
+    @media ($media_sm) {
+        text-align: left;
+    }
+
     // .baseHeader--left
 
     &--left {
         text-align: left;
         max-width: unset;
-
-        @media ($media_sm) {
-            text-align: center;
-        }
     }
 
     // .baseHeader--main
@@ -452,6 +452,23 @@
         }
     }
 
+    // .productInfo__versions
+
+    &__versions {
+        display: flex;
+        align-items: center;
+        margin-top: 1.875rem;
+
+        .btn {
+            flex-basis: 100%;
+            justify-content: center;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+    }
+
     // .productInfo__company
 
     &__company {
@@ -472,6 +489,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-row-gap: 1.25rem;
+
+        @media ($media_sm) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     // .productInfo__btn

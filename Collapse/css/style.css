@@ -4572,9 +4572,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .advanceCard:hover .advanceCard__img {
-  -webkit-transform: translateY(-0.5rem) rotate(180deg) scale(0.85);
-      -ms-transform: translateY(-0.5rem) rotate(180deg) scale(0.85);
-          transform: translateY(-0.5rem) rotate(180deg) scale(0.85);
+  -webkit-transform: translateY(-0.5rem) rotate(360deg) scale(0.85);
+      -ms-transform: translateY(-0.5rem) rotate(360deg) scale(0.85);
+          transform: translateY(-0.5rem) rotate(360deg) scale(0.85);
 }
 
 .advanceCard:hover .advanceCard__title {
@@ -4779,6 +4779,28 @@ body::-webkit-scrollbar-thumb {
 
 .productInfo__header .baseHeader .baseHeader__descr {
   margin-top: 1.875rem;
+}
+
+.productInfo__versions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.875rem;
+}
+
+.productInfo__versions .btn {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productInfo__versions .btn:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .productInfo__company {
@@ -4995,9 +5017,12 @@ body::-webkit-scrollbar-thumb {
   color: #67814f;
 }
 
-.btn:disabled {
-  opacity: 0.7;
+.btn[disabled] {
+  background-color: rgba(44, 48, 60, 0.12);
   pointer-events: none;
+  border: 1px solid #2C303C;
+  padding: .6875rem 1.5rem;
+  color: #515B76;
 }
 
 .menu {
@@ -6074,6 +6099,42 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   right: 0;
 }
 
+.product {
+  margin-top: calc(var(--section_indent) * -1);
+  padding: var(--section_indent) 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 28, 37, 0.95)), color-stop(45.83%, rgba(26, 30, 40, 0.95))), url(../img/product_bg.png);
+  background-image: -o-linear-gradient(top, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%), url(../img/product_bg.png);
+  background-image: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%), url(../img/product_bg.png);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  background-position: center top;
+}
+
+.product__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product__gui {
+  width: 270px;
+  height: 518px;
+  background-color: #515B76;
+  color: #EEEDF6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (min-width: 769px) {
   .deskHidden {
     display: none;
@@ -6241,8 +6302,12 @@ ul li.menu-item > .menu-image-title-below.menu-link {
     display: flex;
   }
 
-  .baseHeader--left {
-    text-align: center;
+  .baseHeader {
+    text-align: left;
+  }
+
+  .productInfo__features {
+    grid-template-columns: 1fr 1fr;
   }
 
   .languages--fixed {
@@ -6424,6 +6489,13 @@ ul li.menu-item > .menu-image-title-below.menu-link {
         -ms-transform-origin: bottom;
             transform-origin: bottom;
   }
+
+  .product__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media (max-width: 576px) {
@@ -6456,3 +6528,9 @@ ul li.menu-item > .menu-image-title-below.menu-link {
     opacity: 0;
   }
 }
+
+.webp-support .product{ background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 28, 37, 0.95)), color-stop(45.83%, rgba(26, 30, 40, 0.95))), url(../img/product_bg.webp); }
+
+.webp-support .product{ background-image: -o-linear-gradient(top, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%), url(../img/product_bg.webp); }
+
+.webp-support .product{ background-image: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%), url(../img/product_bg.webp); }

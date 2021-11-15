@@ -128,9 +128,13 @@
         }
     }
 
-    &:disabled {
-        opacity: 0.7;
+    &[disabled] {
+        background-color: $color_btn_disabled;
         pointer-events: none;
+        border: 1px solid $color_secondary;
+        padding: .6875rem 1.5rem;
+
+        color: $color_text;
     }
 
 }
