@@ -3,6 +3,17 @@
 
     .menu-item {
         display: flex;
+        @include cursorPointer;
+
+        &.active {
+            a {
+                color: $color_purple;
+            }
+
+            img.hovered-image {
+                opacity: 1;
+            }
+        }
     }
 
     .current-menu-item {

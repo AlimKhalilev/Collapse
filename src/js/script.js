@@ -18,6 +18,28 @@
 --include("_contentSelect.js")
 --include("_swiper.js")
 
-document.querySelectorAll(".version").forEach(item => { // устанавливаем на нужных элементах версию разработки
-    item.innerHTML = "1.2.4";
+document.querySelectorAll(".toggle-menu").forEach(menuToggler => { // добавляем/убираем состояние у элемента с классом .toggle-menu (our products)
+    let menuContainer = document.querySelector(".productMenu");
+
+    menuToggler.addEventListener("click", () => {
+        menuToggler.classList.toggle("active");
+        if (menuContainer !== null) {
+            menuContainer.classList.toggle("active");
+        }
+    });
+});
+
+const productMenuSwiper = new Swiper('.productMenu__swiper', {
+    effect: "fade",
+    allowTouchMove: false,
+});
+
+document.querySelectorAll(".productMenu__radio").forEach((menuRadio, id) => {
+    if (menuRadio.checked) {
+        productMenuSwiper.slideTo(id, 0, true);
+    }
+
+    menuRadio.addEventListener("change", () => {
+        productMenuSwiper.slideTo(id, 300, true)
+    })
 });
