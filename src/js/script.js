@@ -40,6 +40,6 @@ document.querySelectorAll(".productMenu__radio").forEach((menuRadio, id) => {
     }
 
     menuRadio.addEventListener("change", () => {
-        productMenuSwiper.slideTo(id, 300, true)
+        productMenuSwiper.slideTo(id, 500, true)
     })
 });

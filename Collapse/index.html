@@ -531,6 +531,582 @@
 			</div>
 		</section>
 
+		<div class="section gui">
+			<div class="section__inner">
+				<div class="gui__header">
+					<div class="baseHeader">
+                        <h2 class="baseHeader__title">Collapse GUI</h2>
+                        <span class="baseHeader__descr">
+							You can click the <span class="baseHeader__accent">"Player"</span> 
+							tab and see how it works in the game, using the example of the game
+                            <span class="baseHeader__accent">Rust</span>
+						</span>
+                    </div>
+				</div>
+				<div class="gui__body">
+					<div class="gui__windowOverlay">
+						<div class="gui__imgBg">
+							<img class="gui__img" src="./img/bg_guiWindow_round.svg" alt="Фон GUI">
+						</div>
+						<div class="gui__window">
+							<div class="guiWindow">
+								<div class="guiWindow__header">
+									<div class="guiWindow__logo">
+										<img src="./img/gui_logo.svg" alt="Логотип GUI">
+									</div>
+									<ul class="guiWindow__tabs">
+										<li class="guiWindow__tab guiWindow__tab--active">Esp</li>
+										<li class="guiWindow__tab">Aimbot</li>
+										<li class="guiWindow__tab">Misc</li>
+										<li class="guiWindow__tab">Skins</li>
+									</ul>
+								</div>
+								<div class="guiWindow__body">
+									<div class="guiColumn">
+										<div class="guiColumn__block">
+											<div class="guiColumn__header">
+												<h5 class="guiColumn__title">Player</h5>
+											</div>
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Esp Active</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="guiColumn__block guiColumn__block--disabled">
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Bot</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" />
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Sleeper</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="guiColumn__block">
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Box</span>
+													</label>
+													<div class="guiColumn__color"></div>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Skeleton</span>
+													</label>
+													<div class="guiColumn__color guiColumn__color--red"></div>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Team ID</span>
+													</label>
+													<div class="guiColumn__color guiColumn__color--blue"></div>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">NickName</span>
+													</label>
+													<div class="guiColumn__color"></div>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Health</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Inventory</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Weapon</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Distance</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<div class="guiColumn__progress">
+														<div class="guiColumn__progressTrack"></div>  
+														<span class="guiColumn__progressValue">400.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+		
+										<div class="guiColumn__block guiColumn__block--disabled">
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Corpse & Backpack</span>
+													</label>
+													<div class="guiColumn__color"></div>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Distance</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<div class="guiColumn__progress">
+														<div class="guiColumn__progressTrack"></div>  
+														<span class="guiColumn__progressValue">400.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+		
+									<div class="guiColumn guiColumn--disabled">
+										<div class="guiColumn__block">
+											<div class="guiColumn__header">
+												<h5 class="guiColumn__title">Resources</h5>
+												<div class="guiColumn__color guiColumn__color--blue"></div>
+											</div>
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Ores</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Collectible Ores</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" />
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Stone</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Metal</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Sulfur</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Hemp</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Other Collectibles</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Distance</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<div class="guiColumn__progress">
+														<div class="guiColumn__progressTrack"></div>  
+														<span class="guiColumn__progressValue">400.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="guiColumn__block">
+											<div class="guiColumn__header">
+												<h5 class="guiColumn__title">World</h5>
+												<div class="guiColumn__color guiColumn__color--blue"></div>
+											</div>
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Radtown loot</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Cupboard</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Crates</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" checked/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Distance</span>
+													</label>
+													<div class="guiColumn__color"></div>
+												</div>
+												<div class="guiColumn__item">
+													<div class="guiColumn__progress">
+														<div class="guiColumn__progressTrack"></div>  
+														<span class="guiColumn__progressValue">400.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+		
+									<div class="guiColumn guiColumn--disabled">
+										<div class="guiColumn__block">
+											<div class="guiColumn__header">
+												<h5 class="guiColumn__title">Other</h5>
+												<div class="guiColumn__color guiColumn__color--blue"></div>
+											</div>
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Patrol Helicopter</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" />
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Chinook</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" />
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Bradley</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Boats</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Copters</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Horse</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Cargo Ship</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Train</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Distance</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<div class="guiColumn__progress">
+														<div class="guiColumn__progressTrack"></div>  
+														<span class="guiColumn__progressValue">400.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="guiColumn__block">
+											<div class="guiColumn__items">
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Dropped Items</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" />
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Food</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox" />
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Animals</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<label class="c-checkbox">
+														<input class="c-checkbox__input visually-hidden" type="checkbox"/>
+														<div class="c-checkbox__box">
+															<svg class="c-checkbox__icon icon icon-check_basic">
+																<use xlink:href="./img/sprite.svg#check_basic"></use>
+															</svg>
+														</div>
+														<span class="c-checkbox__text">Distance</span>
+													</label>
+												</div>
+												<div class="guiColumn__item">
+													<div class="guiColumn__progress">
+														<div class="guiColumn__progressTrack"></div>  
+														<span class="guiColumn__progressValue">400.00</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>					
+						</div>
+					</div>
+					<div class="gui__interact">
+						<div class="interact">
+							<img class="interact__icon" src="./img/interact/eye.svg" alt="Иконка глаза">
+							<span class="interact__text">You can interact with a character from rust</span>
+							<img class="interact__icon interact__icon" src="./img/interact/arrow-top.svg" alt="Иконка стрелки">
+						</div>
+					</div>
+					<div class="gui__community">
+						<div class="community">
+							<div class="community__img">
+								<img src="./img/community_icon.svg" alt="Иконка community" />
+							</div>
+							<div class="community__header baseHeader">
+								<h2 class="baseHeader__title">Collapse Community</h2>
+								<span class="baseHeader__descr">Join our community on the forum. Click on the link below and get news, share your information. We work for you!</span>
+							</div>
+							<div class="community__btn">
+								<a href="#" class="btn btn--secondary">Visit the forum</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<section class="section main">
 			<div class="section__inner main__inner">
 
@@ -631,7 +1207,7 @@
         <div class="footer__top">
             <div class="footer__row">
                 <div class="footer__col footer__col--info">
-                    <a href="https://collapse.thechampguess.ru/" class="custom-logo-link" rel="home">
+                    <a href="./" class="custom-logo-link" rel="home">
                         <img width="111" height="26" src="https://collapse.thechampguess.ru/wp-content/uploads/2021/11/logo.svg" class="custom-logo" alt="Logo">
                     </a>
                     <span class="footer__about">In any game with any cheat, it is possible to get your account blocked. Play as carefully as possible.</span>

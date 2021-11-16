@@ -344,12 +344,34 @@
 }
 
 .product {
+    position: relative;
     margin-top: calc(var(--section_indent) * -1);
-    padding: var(--section_indent) 0;
 
-    background-image: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%), url(../img/product_bg.png);
-    backdrop-filter: blur(25px);
-    background-position: center top;
+    // .product__bgContainer
+
+    &__bgContainer {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .product__bg
+
+    &__bg {
+
+    }
+
+    // .product__container
+
+    &__container {
+        position: relative;
+        background-image: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%);
+        padding: var(--section_indent) 0;
+        backdrop-filter: blur(5px);
+    }
 
     // .product__content
 
@@ -445,24 +467,28 @@
         min-width: 20rem;
 
         @include cursorPointer;
-    }
 
-    &__label:hover, &__radio:checked {
-        .productMenu__title, &~.productMenu__title {
-            transform: scale(1.4);
-            transform-origin: left;
-            color: var(--hoverTextColor);
-        }
-        
-        .productMenu__img, &~.productMenu__img {
-            opacity: 1;
+        &:hover {
+            .productMenu__title {
+                color: $color_purple;
+            }
         }
     }
 
     // .productMenu__radio
 
     &__radio {
-
+        &:checked {
+            .productMenu__title, &~.productMenu__title {
+                transform: scale(1.4);
+                transform-origin: left;
+                color: var(--hoverTextColor);
+            }
+            
+            .productMenu__img, &~.productMenu__img {
+                opacity: 1;
+            }
+        }
     }
 
     // .productMenu__title
@@ -492,4 +518,65 @@
 
 .swiperMenuProduct .swiper-slide {
     background: rgba(25,28,37,.94);
+}
+
+.gui {
+    background: $color_bg_gui;
+    padding: var(--section_indent) 0;
+
+    // .gui__header
+
+    &__header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    // .gui__imgBg
+
+    &__imgBg {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+        transform: translateY(50%);        
+    }
+
+    // .gui__body
+
+    &__body {
+    }
+
+    // .gui__windowOverlay
+
+    &__windowOverlay {
+        position: relative;
+
+        .guiWindow {
+            position: relative;
+        }
+    }
+
+    // .gui__window
+
+    &__window {
+
+    }
+
+    // .gui__interact
+
+    &__interact {
+        margin: 2rem 0 var(--section_indent) 0;
+        text-align: center;
+    }
+
+    // .gui__community
+
+    &__community {
+        display: flex;
+        justify-content: center;
+    }
 }

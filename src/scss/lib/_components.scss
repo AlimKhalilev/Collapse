@@ -374,7 +374,7 @@
 }
 
 .interact {
-    display: flex;
+    display: inline-flex;
     align-items: center;
 
     // .interact__icon
@@ -551,6 +551,211 @@
 
         @media ($media_sm) {
             display: none;
+        }
+    }
+}
+
+.guiColumn {
+    background: $color_guiColumn_bg;
+    border: 1px solid $color_guiColumn_border;
+    border-radius: 0.3125rem;
+    padding: 0.625rem;
+
+    &--disabled {
+        background: unset;
+    }
+
+    &--disabled .guiColumn__block, &__block--disabled {
+        pointer-events: none;
+        opacity: 0.24;
+
+        .guiColumn__progressTrack {
+            background-color: $color_text;
+        }
+
+        .c-checkbox__input:checked~.c-checkbox__box {
+            background-color: transparent;
+            border-color: $color_text;
+        }
+
+        .c-checkbox__input:checked~.c-checkbox__box .c-checkbox__icon {
+            fill: $color_text;
+        }
+
+        .c-checkbox__input:checked~.c-checkbox__text {
+            color: $color_text;
+        }
+    }
+
+    // .guiColumn__block
+
+    &__block {
+        &:not(:last-child) {
+            margin-bottom: .75rem;
+        }
+    }
+
+    // .guiColumn__header
+
+    &__header {
+        margin-bottom: .75rem;
+        
+        display: flex;
+        align-items: center;
+    }
+
+    // .guiColumn__title
+
+    &__title {
+        line-height: 1;
+
+        font-size: .75rem;
+        font-weight: 500;
+    }
+
+    // .guiColumn__items
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .guiColumn__item
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &--disabled {
+            opacity: 0.24;
+            pointer-events: none;
+
+            .guiColumn__progressTrack {
+                background-color: $color_text;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: .75rem;
+        }
+    }
+
+    // .guiColumn__color
+
+    &__color {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0.3125rem;
+        background-color: $color_white;
+        border: 1px solid $color_purple;
+
+        margin-left: .75rem;
+
+        &--red {
+            background-color: $color_danger;
+        }
+
+        &--blue {
+            background-color: $color_info;
+        }
+    }
+
+    // .guiColumn__progress
+
+    &__progress {
+        display: flex;
+        align-items: center;
+    }
+
+    // .guiColumn__progressTrack
+
+    &__progressTrack {
+        width: 7rem;
+        height: 0.375rem;
+        background-color: $color_purple;
+        border-radius: 1px;
+        box-shadow: 0 0 0 0.125rem $color_text;
+    }
+
+    // .guiColumn__progressValue
+
+    &__progressValue {
+        font-size: .75rem;
+        font-weight: 500;
+        margin-left: .75rem;
+    }
+}
+
+.guiWindow {
+    background-color: $color_bg_guiWindow;
+    border-radius: 0.3125rem;
+
+    max-width: 50rem;
+    margin: 0 auto;
+    overflow: hidden;
+
+    // .guiWindow__header
+
+    &__header {
+        background: linear-gradient(90deg, #383E51 0%, #2F3548 31.27%, #2F3548 68.99%, #353B4F 100%), 
+                    linear-gradient(90deg, #383E51 0%, #2A3042 34.18%, #353B4F 100%);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3.125rem;
+        padding: 0 0.625rem;
+    }
+
+    // .guiWindow__logo
+
+    &__logo {
+        display: flex;
+    }
+
+    // .guiWindow__tabs
+
+    &__tabs {
+        display: flex;
+        margin-right: 4rem;
+        height: 100%;
+    }
+
+    // .guiWindow__tab
+
+    &__tab {
+        display: flex;
+        align-items: center;
+
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0 1.25rem;
+        height: inherit;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s ease-in-out;
+
+        &--active {
+            color: $color_purple;
+            border-color: $color_purple;
+        }
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    // .guiWindow__body
+
+    &__body {
+        padding: 0.625rem;
+        display: flex;
+        
+        .guiColumn {
+            flex-basis: 100%;
+
+            &:not(:last-child) {
+                margin-right: 0.625rem;
+            }
         }
     }
 }
