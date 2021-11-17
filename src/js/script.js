@@ -6,6 +6,8 @@
 --include("_burger.js")
 //-include("_slider.js")
 --include("_scroll.js")
+--include("_range.js")
+--include("_gui.js")
 
 --include("_passwordSwitcher.js")
 --include("_customSelect.js")

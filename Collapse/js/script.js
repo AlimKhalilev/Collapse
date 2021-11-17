@@ -178,6 +178,181 @@ class Scroll {
 }
 
 Scroll.initEvents();
+var valueDescriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value");
+
+HTMLInputElement.prototype.addInputChangedByJsListener = function(cb) {
+    if(!this.hasOwnProperty("_inputChangedByJSListeners")) {
+        this._inputChangedByJSListeners = [];
+    }
+    this._inputChangedByJSListeners.push(cb);
+}
+
+Object.defineProperty(HTMLInputElement.prototype, "value", {
+    get: function() {
+        return valueDescriptor.get.apply(this, arguments);
+    },
+    set: function() {
+        var self = this;
+        valueDescriptor.set.apply(self, arguments);
+        if(this.hasOwnProperty("_inputChangedByJSListeners")){
+            this._inputChangedByJSListeners.forEach(function(cb) {
+                cb.apply(self);
+            })
+        }
+    }
+});
+
+class Slider {
+    constructor(rangeElement, valueElement, options) {
+        this.rangeElement = rangeElement
+        this.valueElement = valueElement
+        this.options = options
+
+        // Attach a listener to "change" event
+        this.rangeElement.addEventListener('input', this.updateSlider.bind(this));
+        this.rangeElement.addInputChangedByJsListener(this.updateSlider.bind(this));
+    }
+
+    // Initialize the slider
+    init() {
+        this.rangeElement.setAttribute('min', options.min)
+        this.rangeElement.setAttribute('max', options.max)
+        this.rangeElement.value = options.cur
+
+        this.updateSlider()
+    }
+
+    // Format the money
+    asMoney(value) {
+        return '$' + parseFloat(value)
+            .toLocaleString('en-US', { maximumFractionDigits: 2 })
+    }
+
+    parseZero(value) {
+        return parseFloat(value).toFixed(2)
+    }
+
+    generateBackground(rangeElement) {
+        if (this.rangeElement.value === this.options.min) {
+            return
+        }
+
+        let percentage = (this.rangeElement.value - this.options.min) / (this.options.max - this.options.min) * 100
+        return 'background: linear-gradient(to right, #9562ee, #9562ee ' + percentage + '%, transparent ' + percentage + '%, transparent 100%)'
+    }
+
+    updateSlider(newValue) {
+        this.valueElement.innerHTML = this.parseZero(this.rangeElement.value); // this.asMoney(this.rangeElement.value)
+        this.rangeElement.style = this.generateBackground(this.rangeElement.value);
+    }
+}
+
+let options = {
+    min: 0,
+    max: 400,
+    cur: 400
+}
+
+document.querySelectorAll(".guiColumn__progress").forEach(progress => {
+    let rangeElement = progress.querySelector('input.guiColumn__progressTrack');
+    let valueElement = progress.querySelector('.guiColumn__progressValue');
+
+    if (rangeElement) {
+        let slider = new Slider(rangeElement, valueElement, options)
+        slider.init()
+    }
+});
+class GUI {
+    static exceptionList = ["esp", "distance", "distanceToggle"];
+    static playerDistance = +document.querySelector(".guiPlayer__distance").innerHTML || 231;
+
+    static exceptionBranching(handle, handleName, guiContainer) {
+
+        handle.addEventListener("change", () => {
+            if (handleName === "esp") {
+                guiContainer.querySelectorAll(".guiColumn__handle").forEach(handleElem => {
+                    handleElem.checked = handle.checked;
+
+                    let handleSwitchedName = this.getHandleNameByClassList(handleElem.classList);
+                    this.changeHandleState(handleElem, handleSwitchedName, guiContainer);
+                });
+                
+                if (handle.checked) {
+                    guiContainer.querySelector(".guiColumn__progress").classList.remove("disabled");
+
+                    let distance = guiContainer.querySelector(".guiColumn__progress .guiColumn__distance");
+                    distance.value = +distance.attributes.max.value; // при включении присвоить макс. знач. progress
+                }
+                else {
+                    guiContainer.querySelector(".guiColumn__progress").classList.add("disabled");
+                }
+            }
+
+            if (handleName === "distance") {
+
+                guiContainer.querySelectorAll(".guiColumn__handle").forEach(handleElem => {
+                    if (handle.value <= this.playerDistance) {
+                        if (!handleElem.classList.contains("guiColumn__distanceToggle")) {
+                            handleElem.checked = false;
+
+                            let handleSwitchedName = this.getHandleNameByClassList(handleElem.classList);
+                            this.changeHandleState(handleElem, handleSwitchedName, guiContainer);
+                        }
+                    }
+
+                });
+            }
+
+            if (handleName === "distanceToggle") {
+                guiContainer.querySelector(".guiColumn__progress").classList.toggle("disabled");
+            }
+        });
+    }
+
+    static getHandleNameByClassList(classList) { // убираем лишние классы из списка и превращаем в строку
+        let cleanArr = [...classList].filter(elem => elem.includes("guiColumn__") && !elem.includes("handle") && !elem.includes("progress")).join("");
+        return cleanArr.substr(11, cleanArr.length - 11); // убираем префикс guiColumn__ в строке
+    }
+
+    static changeHandleState(handle, handleName, guiContainer) {
+        let handleObject = guiContainer.querySelector(`.guiPlayer__${handleName}`);
+        //console.log("Взаимодействуем с", handleName);
+
+        if (handleObject !== null) {
+            if (handle.checked) {
+                handleObject.classList.add("active");
+            }
+            else {
+                handleObject.classList.remove("active");
+            }
+        }
+    }
+
+    static initBasicToggler(handle, handleName, guiContainer) {
+        this.changeHandleState(handle, handleName, guiContainer);
+
+        handle.addEventListener("change", () => {
+            guiContainer.querySelector(`.guiPlayer__${handleName}`).classList.toggle("active");
+        });
+    }
+
+    static initEvents() {
+        document.querySelectorAll(".guiContainer").forEach(guiContainer => {
+            guiContainer.querySelectorAll(".guiColumn__handle").forEach(handle => {
+                let handleName = this.getHandleNameByClassList(handle.classList);
+
+                if (this.exceptionList.includes(handleName)) {
+                    this.exceptionBranching(handle, handleName, guiContainer);
+                }
+                else {
+                    this.initBasicToggler(handle, handleName, guiContainer);
+                }
+            });
+        });
+    }
+}
+
+GUI.initEvents();
 
 function inputChangeTypePassword() {
     let pathSvg = "img/sprite.svg";

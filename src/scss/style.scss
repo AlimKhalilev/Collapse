@@ -434,7 +434,12 @@
     &__swiper {
         .swiper-slide {
             background-color: $color_bg_menu;
+
+            &-active {
+                pointer-events: none;
+            }
         }
+        
     }
 
     // .productMenu__list

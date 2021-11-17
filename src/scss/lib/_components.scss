@@ -665,16 +665,49 @@
     &__progress {
         display: flex;
         align-items: center;
+        transition: 0.2s ease-in-out;
+
+        &.disabled {
+            opacity: 0.24;
+            pointer-events: none;
+        }
     }
 
     // .guiColumn__progressTrack
 
     &__progressTrack {
+        width: 100%;
+        appearance: none;
         width: 7rem;
-        height: 0.375rem;
-        background-color: $color_purple;
+        height: .375rem;
         border-radius: 1px;
+    
+        outline: none;
+        padding: 0;
+        margin: 0;
         box-shadow: 0 0 0 0.125rem $color_text;
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: transparent;
+        }
+        
+        &::-moz-range-thumb {
+            appearance: none;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: transparent;
+        }
+        
+        /* remove border */
+        &::-moz-focus-inner,
+        &::-moz-focus-outer {
+            border: 0;
+        }
     }
 
     // .guiColumn__progressValue
@@ -791,6 +824,12 @@
 
     &__teamID {
         color: $color_info;
+        transition: 0.2s ease-in-out;
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
     }
 
     // .guiPlayer__nameBar
@@ -814,7 +853,12 @@
     // .guiPlayer__nickName
 
     &__nickName {
+        transition: 0.2s ease-in-out;
+        opacity: 0;
 
+        &.active {
+            opacity: 1;
+        }
     }
 
     // .guiPlayer__about
@@ -824,13 +868,19 @@
         margin: 0.5rem 0;
     }
 
-    // .guiPlayer__picture
+    // .guiPlayer__box
 
-    &__picture {
+    &__box {
+        transition: 0.2s ease-in-out;
         position: relative;
         padding: 0.75rem;
-        border: 2px solid $color_guiPlayer_border;
+        border: 2px solid;
+        border-color: transparent;
         flex-basis: 100%;
+
+        &.active {
+            border-color: $color_guiPlayer_border;
+        }
     }
 
     // .guiPlayer__img
@@ -842,18 +892,32 @@
     // .guiPlayer__skeleton
 
     &__skeleton {
+        transition: 0.2s ease-in-out;
+        opacity: 0;
+
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        &.active {
+            opacity: 1;
+        }
     }
 
     // .guiPlayer__hp
 
     &__hp {
+        transition: 0.2s ease-in-out;
+        opacity: 0;
+
         background-color: $color_guiPlayer_hp;
         width: 0.25rem;
         margin-left: 0.625rem;
+
+        &.active {
+            opacity: 1;
+        }
     }
 
     // .guiPlayer__footer
@@ -866,12 +930,24 @@
 
     &__weapon {
         display: block;
+
+        transition: 0.2s ease-in-out;
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
     }
 
     // .guiPlayer__inventory
 
     &__inventory {
+        transition: 0.2s ease-in-out;
+        opacity: 0;
 
+        &.active {
+            opacity: 1;
+        }
     }
 }
 
@@ -886,6 +962,7 @@
     }
 
     .guiPlayer {
+        position: relative;
         margin-left: calc((var(--blockWidth) / 3) * -1);
     }
 
