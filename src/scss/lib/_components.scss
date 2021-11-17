@@ -803,10 +803,9 @@
     width: var(--blockWidth);
     line-height: 1.85;
 
-    background: linear-gradient(164.8deg, rgba(46, 53, 73, 0.88) 0%, rgba(42, 47, 63, 0.88) 100%);
+    background: linear-gradient(164.8deg, rgba(46, 53, 73, 0.92) 0%, rgba(42, 47, 63, 0.92) 100%);
     border: 1px solid rgba(40, 45, 62, 0.5);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(25px);
     border-radius: 0.3125rem;
 
     display: inline-flex;
@@ -974,6 +973,11 @@
     &--min {
         .guiWindow {
             min-width: unset;
+            transition: 0.5s ease-in-out;
+
+            &:hover {
+                transform: translateX(-60%);
+            }
         }
 
         .guiPlayer {
@@ -992,6 +996,10 @@
     @media ($media_sm) {
         .guiWindow {
             min-width: unset;
+
+            &:hover {
+                transform: unset;
+            }
         }
 
         .guiPlayer {
