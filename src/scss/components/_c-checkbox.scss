@@ -4,6 +4,18 @@
     align-items: center;
     @include cursorPointer;
 
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        .c-checkbox__box {
+            border-color: $color_text_secondary;
+        }
+
+        .c-checkbox__text {
+            color: $color_text_secondary;
+        }
+    }
+
     // .c-checkbox__input
 
     &--radio {
@@ -54,9 +66,17 @@
             }
         }
 
-        &:focus, &:hover {
+        &:hover {
             ~ .c-checkbox__box {
-                
+                border-color: $color_text_secondary;
+            }
+    
+            ~ .c-checkbox__text {
+                color: $color_text_secondary;
+            }
+
+            ~ .c-checkbox__icon {
+                fill: $color_text_secondary;
             }
         }
 
@@ -65,6 +85,7 @@
     // .c-checkbox__box
 
     &__box {
+        transition: inherit;
         width: 1rem;
         height: 1rem;
         border: 1px solid $color_text;
@@ -78,6 +99,7 @@
     // .c-checkbox__icon
 
     &__icon {
+        transition: inherit;
         font-size: 0.5rem;
         fill: transparent;
     }
@@ -85,6 +107,7 @@
     // .c-checkbox__text
 
     &__text {
+        transition: inherit;
         margin-left: 0.75rem;
         font-size: 0.75rem;
         font-weight: 500;

@@ -717,7 +717,7 @@
 
     &__tabs {
         display: flex;
-        margin-right: 4rem;
+        margin-right: 3.5rem;
         height: 100%;
     }
 
@@ -756,6 +756,172 @@
             &:not(:last-child) {
                 margin-right: 0.625rem;
             }
+        }
+    }
+}
+
+.guiPlayer {
+    --blockWidth: 17rem;
+
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: $color_white;
+    text-align: center;
+    width: var(--blockWidth);
+    line-height: 1.85;
+
+    background: linear-gradient(164.8deg, rgba(46, 53, 73, 0.88) 0%, rgba(42, 47, 63, 0.88) 100%);
+    border: 1px solid rgba(40, 45, 62, 0.5);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(25px);
+    border-radius: 0.3125rem;
+
+    display: inline-flex;
+    flex-direction: column;
+
+    padding: 1.75rem 2.625rem;
+
+    // .guiPlayer__header
+
+    &__header {
+         
+    }
+
+    // .guiPlayer__teamID
+
+    &__teamID {
+        color: $color_info;
+    }
+
+    // .guiPlayer__nameBar
+
+    &__nameBar {
+
+    }
+
+    // .guiPlayer__distanceOverlay
+
+    &__distanceOverlay {
+
+    }
+
+    // .guiPlayer__distance
+
+    &__distance {
+
+    }
+
+    // .guiPlayer__nickName
+
+    &__nickName {
+
+    }
+
+    // .guiPlayer__about
+
+    &__about {
+        display: flex;
+        margin: 0.5rem 0;
+    }
+
+    // .guiPlayer__picture
+
+    &__picture {
+        position: relative;
+        padding: 0.75rem;
+        border: 2px solid $color_guiPlayer_border;
+        flex-basis: 100%;
+    }
+
+    // .guiPlayer__img
+
+    &__img {
+
+    }
+
+    // .guiPlayer__skeleton
+
+    &__skeleton {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    // .guiPlayer__hp
+
+    &__hp {
+        background-color: $color_guiPlayer_hp;
+        width: 0.25rem;
+        margin-left: 0.625rem;
+    }
+
+    // .guiPlayer__footer
+
+    &__footer {
+
+    }
+
+    // .guiPlayer__weapon
+
+    &__weapon {
+        display: block;
+    }
+
+    // .guiPlayer__inventory
+
+    &__inventory {
+
+    }
+}
+
+.guiContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .guiWindow {
+        min-width: 50rem;
+        margin: 0;
+    }
+
+    .guiPlayer {
+        margin-left: calc((var(--blockWidth) / 3) * -1);
+    }
+
+    &--min {
+        .guiWindow {
+            min-width: unset;
+        }
+
+        .guiPlayer {
+            margin-left: calc((var(--blockWidth) / 2) * -1);
+        }
+
+        .guiWindow__header, .guiColumn--disabled {
+            display: none;
+        }
+
+        .guiWindow__body {
+            padding: 0;
+        }
+    }
+
+    @media ($media_sm) {
+        .guiWindow {
+            min-width: unset;
+        }
+
+        .guiPlayer {
+            margin-left: calc((var(--blockWidth) / 2) * -1);
+        }
+
+        .guiWindow__header, .guiColumn--disabled {
+            display: none;
+        }
+
+        .guiWindow__body {
+            padding: 0;
         }
     }
 }

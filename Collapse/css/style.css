@@ -5043,7 +5043,7 @@ body::-webkit-scrollbar-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 4rem;
+  margin-right: 3.5rem;
   height: 100%;
 }
 
@@ -5087,6 +5087,108 @@ body::-webkit-scrollbar-thumb {
 
 .guiWindow__body .guiColumn:not(:last-child) {
   margin-right: 0.625rem;
+}
+
+.guiPlayer {
+  --blockWidth: 17rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #EEEDF6;
+  text-align: center;
+  width: var(--blockWidth);
+  line-height: 1.85;
+  background: -o-linear-gradient(285.2deg, rgba(46, 53, 73, 0.88) 0%, rgba(42, 47, 63, 0.88) 100%);
+  background: linear-gradient(164.8deg, rgba(46, 53, 73, 0.88) 0%, rgba(42, 47, 63, 0.88) 100%);
+  border: 1px solid rgba(40, 45, 62, 0.5);
+  -webkit-box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 0.3125rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.75rem 2.625rem;
+}
+
+.guiPlayer__teamID {
+  color: #4680CA;
+}
+
+.guiPlayer__about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.guiPlayer__picture {
+  position: relative;
+  padding: 0.75rem;
+  border: 2px solid #DFDFE0;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.guiPlayer__skeleton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.guiPlayer__hp {
+  background-color: #20AB71;
+  width: 0.25rem;
+  margin-left: 0.625rem;
+}
+
+.guiPlayer__weapon {
+  display: block;
+}
+
+.guiContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.guiContainer .guiWindow {
+  min-width: 50rem;
+  margin: 0;
+}
+
+.guiContainer .guiPlayer {
+  margin-left: calc((var(--blockWidth) / 3) * -1);
+}
+
+.guiContainer--min .guiWindow {
+  min-width: unset;
+}
+
+.guiContainer--min .guiPlayer {
+  margin-left: calc((var(--blockWidth) / 2) * -1);
+}
+
+.guiContainer--min .guiWindow__header,
+.guiContainer--min .guiColumn--disabled {
+  display: none;
+}
+
+.guiContainer--min .guiWindow__body {
+  padding: 0;
 }
 
 /* СТИЛИ КОМПОНЕНТОВ (первая буква c- означает custom) */
@@ -5478,6 +5580,17 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.c-checkbox:hover .c-checkbox__box {
+  border-color: #9FA4B0;
+}
+
+.c-checkbox:hover .c-checkbox__text {
+  color: #9FA4B0;
 }
 
 .c-checkbox--radio .c-checkbox__box {
@@ -5508,7 +5621,22 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   color: #9562EE;
 }
 
+.c-checkbox__input:hover ~ .c-checkbox__box {
+  border-color: #9FA4B0;
+}
+
+.c-checkbox__input:hover ~ .c-checkbox__text {
+  color: #9FA4B0;
+}
+
+.c-checkbox__input:hover ~ .c-checkbox__icon {
+  fill: #9FA4B0;
+}
+
 .c-checkbox__box {
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
   width: 1rem;
   height: 1rem;
   border: 1px solid #515B76;
@@ -5525,11 +5653,17 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 }
 
 .c-checkbox__icon {
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
   font-size: 0.5rem;
   fill: transparent;
 }
 
 .c-checkbox__text {
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
   margin-left: 0.75rem;
   font-size: 0.75rem;
   font-weight: 500;
@@ -6350,22 +6484,6 @@ ul li.menu-item > .menu-image-title-below.menu-link {
           justify-content: space-between;
 }
 
-.product__gui {
-  width: 270px;
-  height: 518px;
-  background-color: #515B76;
-  color: #EEEDF6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .productMenu {
   position: absolute;
   left: 0;
@@ -6698,6 +6816,23 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .languages--fixed {
     display: none;
+  }
+
+  .guiContainer .guiWindow {
+    min-width: unset;
+  }
+
+  .guiContainer .guiPlayer {
+    margin-left: calc((var(--blockWidth) / 2) * -1);
+  }
+
+  .guiContainer .guiWindow__header,
+  .guiContainer .guiColumn--disabled {
+    display: none;
+  }
+
+  .guiContainer .guiWindow__body {
+    padding: 0;
   }
 
   .c-field {
