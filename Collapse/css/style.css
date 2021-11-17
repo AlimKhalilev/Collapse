@@ -5165,6 +5165,17 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
+.guiPlayer__distanceOverlay {
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.guiPlayer__distanceOverlay.active {
+  opacity: 1;
+}
+
 .guiPlayer__nickName {
   -webkit-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;

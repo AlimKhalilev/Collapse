@@ -1,8 +1,12 @@
 class GUI {
     static exceptionList = ["esp", "distance", "distanceToggle"];
-    static playerDistance = +document.querySelector(".guiPlayer__distance").innerHTML || 231;
 
     static exceptionBranching(handle, handleName, guiContainer) {
+        let playerDistance = +guiContainer.querySelector(".guiPlayer__distance").innerHTML || 231;
+        let playerDistanceToggle = guiContainer.querySelector(".guiColumn__distanceToggle");
+        let playerDistanceOverlay = guiContainer.querySelector(".guiPlayer__distanceOverlay");
+
+        this.changeHandleState(playerDistanceToggle, "distanceOverlay", guiContainer);
 
         handle.addEventListener("change", () => {
             if (handleName === "esp") {
@@ -22,18 +26,21 @@ class GUI {
                 else {
                     guiContainer.querySelector(".guiColumn__progress").classList.add("disabled");
                 }
+
+                this.changeHandleState(playerDistanceToggle, "distanceOverlay", guiContainer);
             }
 
             if (handleName === "distance") {
 
                 guiContainer.querySelectorAll(".guiColumn__handle").forEach(handleElem => {
-                    if (handle.value <= this.playerDistance) {
+                    if (handle.value <= playerDistance) {
                         if (!handleElem.classList.contains("guiColumn__distanceToggle")) {
                             handleElem.checked = false;
 
                             let handleSwitchedName = this.getHandleNameByClassList(handleElem.classList);
                             this.changeHandleState(handleElem, handleSwitchedName, guiContainer);
                         }
+
                     }
 
                 });
@@ -41,6 +48,7 @@ class GUI {
 
             if (handleName === "distanceToggle") {
                 guiContainer.querySelector(".guiColumn__progress").classList.toggle("disabled");
+                this.changeHandleState(playerDistanceToggle, "distanceOverlay", guiContainer);
             }
         });
     }

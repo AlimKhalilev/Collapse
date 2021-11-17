@@ -841,7 +841,12 @@
     // .guiPlayer__distanceOverlay
 
     &__distanceOverlay {
+        transition: 0.2s ease-in-out;
+        opacity: 0;
 
+        &.active {
+            opacity: 1;
+        }
     }
 
     // .guiPlayer__distance
