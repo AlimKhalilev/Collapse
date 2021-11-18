@@ -6809,8 +6809,17 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 }
 
 .main__container {
-  padding-bottom: calc(var(--section_indent) / 1.5);
-  padding-top: var(--section_indent);
+  padding: 1rem 0;
+  min-height: calc(100vh - var(--section_indent) + 0.5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .main__top {
@@ -6989,10 +6998,6 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
 .main__timerBar--fill {
   height: 100%;
-}
-
-.main__bottom {
-  margin-top: var(--section_indent);
 }
 
 @media (min-width: 769px) {

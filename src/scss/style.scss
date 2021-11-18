@@ -529,8 +529,14 @@
     // .main__container
 
     &__container {
-        padding-bottom: calc(var(--section_indent) / 1.5);
-        padding-top: var(--section_indent);
+        //padding-bottom: calc(var(--section_indent) / 1.5);
+        //padding-top: var(--section_indent);
+
+        padding: 1rem 0;
+        min-height: calc(100vh - var(--section_indent) + 0.5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     // .main__top
@@ -758,6 +764,6 @@
     // .main__bottom
 
     &__bottom {
-        margin-top: var(--section_indent);
+        //margin-top: var(--section_indent);
     }
 }
