@@ -289,12 +289,12 @@
     transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
-    display: inline-block;
-    border-radius: 50%;
-    background: var(--swiper-pagination-bullet-inactive-color, #000);
-    opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+    // width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+    // height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+    // display: inline-block;
+    // border-radius: 50%;
+    // background: var(--swiper-pagination-bullet-inactive-color, #000);
+    // opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
 }
 button.swiper-pagination-bullet {
     border: none;
@@ -610,53 +610,4 @@ button.swiper-pagination-bullet {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
-}
-
-// CUSTOM STYLES //
-
-.swiper-button {
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: $color_white;
-    box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    opacity: 1;
-
-    transition: 0.3s ease-in-out;
-    background-image: url(../img/slide_arrow.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.swiper-button-prev,
-.swiper-rtl .swiper-button-next {
-    left: -3rem;
-    right: auto;
-    transform: rotateY(180deg);
-}
-.swiper-button-prev:after,
-.swiper-rtl .swiper-button-next:after {
-    content: "";
-}
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-    right: -3rem;
-    left: auto;
-}
-.swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
-    content: "";
-}
-.swiper-pagination {
-    position: initial;
-    margin-top: 0.5rem;
-
-    &-bullet {
-        width: 9px;
-        height: 9px;
-
-        &-active {
-            background-color: $color_primary;
-        }
-    }
 }
