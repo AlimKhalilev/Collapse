@@ -7133,13 +7133,23 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
   .section__inner {
     max-width: 1050px;
   }
 
   .animBlock__items {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .main__sliderContainer {
+    max-width: 30rem;
+  }
+
+  .main__sliderContainer .main__info {
+    width: 40rem;
+    text-align: center;
+    left: -5rem;
   }
 }
 
@@ -7416,6 +7426,11 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .main__sliderContainer {
     max-width: 90vw;
+  }
+
+  .main__sliderContainer .main__info {
+    width: unset;
+    left: unset;
   }
 
   .main__game .swiper-slide,
