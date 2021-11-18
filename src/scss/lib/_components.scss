@@ -269,25 +269,21 @@
     display: inline-block;
     max-width: 23rem;
 
-    @media ($media_sm) {
-        text-align: left;
-    }
-
     // .baseHeader--left
 
     &--left {
         text-align: left;
         max-width: unset;
+
+        @media ($media_sm) {
+            text-align: center;
+        }
     }
 
     // .baseHeader--main
 
     &--main {
         max-width: unset;
-
-        @media ($media_sm) {
-            text-align: center;
-        }
 
         .baseHeader__subtitle, .baseHeader__title {
             text-transform: uppercase;
@@ -300,7 +296,7 @@
             margin: 0.5rem 0;
 
             @media ($media_sm) {
-                font-size: 2rem;
+                font-size: 1.875rem;
             }
         }
 
@@ -336,6 +332,10 @@
         font-weight: 700;
         line-height: 1.2;
         color: $color_white;
+
+        @media ($media_sm) {
+            font-size: 1.875rem;
+        }
     }
 
     // .baseHeader__descr
@@ -452,13 +452,20 @@
         display: flex;
         flex-direction: column;
 
-        margin-bottom: 1.75rem;
-        padding-bottom: 1.75rem;
-        border-bottom: 1px solid $color_block_border;
+        .baseHeader {
+            &__descr {
+                margin-top: 1.875rem;
 
-        .baseHeader__descr {
-            margin-top: 1.875rem;
+                margin-bottom: 1.75rem;
+                padding-bottom: 1.75rem;
+                border-bottom: 1px solid $color_block_border;
+            }
+
+            @media ($media_sm) {
+                text-align: left;
+            }
         }
+
     }
 
     // .productInfo__versions
@@ -827,6 +834,11 @@
 
     padding: 1.75rem 2.625rem;
 
+    @media ($media_sm) {
+        --blockWidth: 14rem;
+        padding: 0.5rem 1.5rem;
+    }
+
     // .guiPlayer__header
 
     &__header {
@@ -1017,7 +1029,7 @@
         }
 
         .guiPlayer {
-            margin-left: calc((var(--blockWidth) / 2) * -1);
+            margin-left: calc((var(--blockWidth) / 3.2) * -1);
         }
 
         .guiWindow__header, .guiColumn--disabled {

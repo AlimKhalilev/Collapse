@@ -4709,13 +4709,13 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 1.75rem;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid rgba(196, 196, 196, 0.04);
 }
 
 .productInfo__header .baseHeader__descr {
   margin-top: 1.875rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.04);
 }
 
 .productInfo__versions {
@@ -5876,6 +5876,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  white-space: nowrap;
 }
 
 .c-field {
@@ -7135,7 +7136,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
 @media (max-width: 1500px) {
   .section__inner {
-    max-width: 1050px;
+    max-width: 1170px;
   }
 
   .animBlock__items {
@@ -7153,7 +7154,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .section__inner {
     max-width: 950px;
   }
@@ -7193,20 +7194,24 @@ ul li.menu-item > .menu-image-title-below.menu-link {
     display: flex;
   }
 
-  .baseHeader {
-    text-align: left;
-  }
-
-  .baseHeader--main {
+  .baseHeader--left {
     text-align: center;
   }
 
   .baseHeader--main .baseHeader__title {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
 
   .baseHeader--main .baseHeader__subtitle {
     font-size: 0.875rem;
+  }
+
+  .baseHeader__title {
+    font-size: 1.875rem;
+  }
+
+  .productInfo__header .baseHeader {
+    text-align: left;
   }
 
   .productInfo__features {
@@ -7215,6 +7220,11 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .languages--fixed {
     display: none;
+  }
+
+  .guiPlayer {
+    --blockWidth: 14rem;
+    padding: 0.5rem 1.5rem;
   }
 
   .guiContainer .guiWindow {
@@ -7228,7 +7238,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   }
 
   .guiContainer .guiPlayer {
-    margin-left: calc((var(--blockWidth) / 2) * -1);
+    margin-left: calc((var(--blockWidth) / 3.2) * -1);
   }
 
   .guiContainer .guiWindow__header,
@@ -7420,6 +7430,10 @@ ul li.menu-item > .menu-image-title-below.menu-link {
             flex-direction: column;
   }
 
+  .product__gui {
+    margin-top: 1.875rem;
+  }
+
   .productMenu {
     display: none;
   }
@@ -7431,6 +7445,12 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   .main__sliderContainer .main__info {
     width: unset;
     left: unset;
+  }
+
+  .main__info {
+    -webkit-transform: translateY(-30%);
+        -ms-transform: translateY(-30%);
+            transform: translateY(-30%);
   }
 
   .main__game .swiper-slide,
@@ -7446,7 +7466,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .main__game,
   .main__status {
-    bottom: 0;
+    bottom: -3rem;
     top: unset;
     -webkit-transform: unset;
         -ms-transform: unset;
@@ -7457,7 +7477,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
     max-width: 10rem;
     left: 0;
     right: unset;
-    bottom: 0.25rem;
+    bottom: -2.6rem;
   }
 
   .main__game .swiper-slide {
