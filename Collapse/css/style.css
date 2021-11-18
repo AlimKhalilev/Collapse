@@ -6809,7 +6809,6 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 }
 
 .main__container {
-  padding: 1rem 0;
   min-height: calc(100vh - var(--section_indent) + 0.5rem);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6818,8 +6817,9 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .main__top {
