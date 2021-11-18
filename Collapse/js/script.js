@@ -1701,6 +1701,18 @@ let swiper = new Swiper(".mySwiper", {
         }
     }
 });
+class MainSlider {
+    static initEvents() {
+
+    }
+}
+
+MainSlider.initEvents();
+
+let mainSlider = new Swiper('.main__slider', {
+    effect: "fade",
+    //allowTouchMove: false,
+});
 
 document.querySelectorAll(".toggle-menu").forEach(menuToggler => { // добавляем/убираем состояние у элемента с классом .toggle-menu (our products)
     let menuContainer = document.querySelector(".productMenu");

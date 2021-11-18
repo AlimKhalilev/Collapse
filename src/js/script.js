@@ -19,6 +19,7 @@
 
 --include("_contentSelect.js")
 --include("_swiper.js")
+--include("_mainSlider.js")
 
 document.querySelectorAll(".toggle-menu").forEach(menuToggler => { // добавляем/убираем состояние у элемента с классом .toggle-menu (our products)
     let menuContainer = document.querySelector(".productMenu");

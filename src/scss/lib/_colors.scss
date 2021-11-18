@@ -13,9 +13,13 @@ $color_updating: #5EA7EA;
 $color_detected: #D34145;
 $color_developing: #64D1D2;
 
+$color_undetectedBg: rgba(137, 204, 152, 0.05);
+$color_updatingBg: rgba(94, 167, 234, 0.05);
+$color_detectedBg: rgba(211, 65, 69, 0.05);
+$color_developingBg: rgba(100, 209, 210, 0.05);
 
-$color_header: #1c1e28;
-$color_bg_main: linear-gradient(180deg, rgba(25, 28, 37, 0.95) 0%, rgba(26, 30, 40, 0.95) 45.83%);
+$color_header: #1E2430;
+$color_bg_main: #1A1F29;
 $color_bg_advantages: #171B25;
 $color_bg_footer: #13161F;
 $color_bg_gui: linear-gradient(180deg, #171A25 0%, #151823 100%);

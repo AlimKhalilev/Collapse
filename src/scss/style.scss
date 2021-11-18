@@ -579,3 +579,92 @@
         justify-content: center;
     }
 }
+
+.main {
+    background-color: $color_bg_main;
+    margin-top: calc(var(--section_indent) * -1);
+
+    // .main__container
+
+    &__container {
+        padding-bottom: calc(var(--section_indent) / 1.5);
+        padding-top: var(--section_indent);
+    }
+
+    // .main__top
+
+    &__top {
+        position: relative;
+    }
+
+    // .main__sliderContainer
+
+    &__sliderContainer {
+        position: relative;
+        max-width: 36rem;
+        margin: 0 auto;
+    }
+
+    // .main__slider
+
+    &__slider {
+    }
+
+    // .main__info
+
+    &__info {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    // .main__header
+
+    &__header {
+    }
+
+    // .main__buttons
+
+    &__buttons {
+        margin-top: 2rem;
+        justify-content: center;
+
+        .btn {
+            &:not(:last-child) {
+                margin-right: .875rem;
+            }
+        }
+    }
+
+    // .main__game
+
+    &__game {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        transform: translateX(50%);
+    }
+
+    // .main__status
+
+    &__status {
+        position: absolute;
+        z-index: 2;
+        bottom: 5%;
+        left: 0;
+        transform: translateX(-70%);
+    }
+
+    // .main__sliderControls
+
+    &__sliderControls {
+    }
+
+    // .main__bottom
+
+    &__bottom {
+        margin-top: var(--section_indent);
+    }
+}
