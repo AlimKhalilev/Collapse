@@ -1,63 +1,160 @@
-<div class="modal" id="modal_success">
-    <div class="modal__body">
-        <div class="modal__header">
-            <h2 class="blockTitle">Хей, это модалка!</h2>
-        </div>
-        <div class="modal__close" data-closeModal>
-            <svg class='icon icon-close'><use xlink:href='img/sprite.svg#close'></use></svg>
-        </div>
+<div class="modal" id="modal_buysub">
+    <div class="modal__container">
         <div class="modal__content">
-            <div class="modal__img">
-                <svg class='icon icon-window'><use xlink:href='img/sprite.svg#window'></use></svg>
+            <div class="modal__header modal__spaceBorder">
+                <h2 class="modal__title">Buy subscription</h2>
+                <img class="modal__close" src="./img/modal_close.svg" alt="Иконка закрытия модалки" data-closeModal>
             </div>
-            <p class="modal__text">
-                Спасибо за прочтение данного текста!
-                Тут нет ничего важного и интересного, но все же...
-                StarterGulp - это круто !
-                главное, чтобы было продолжение)
-            </p>
-            <div class="modal__button">
-                <button class="btn btn--primary" data-closeModal>Хорошо</button>
+            <div class="modal__body">
+                <div class="modal__gameVersion modal__spaceBorder">
+
+                    <div class="contentSelect" data-contentSelect="selectGame" data-mouseLeave>
+                        <img class="contentSelect__icon" src="./img/arrow-select.svg" alt="Иконка открытия списка игр">
+
+                        <div class="contentSelect__item" checked>
+                            <div class="contentSelect__picture">
+                                <img class="contentSelect__img" src="./img/game_icons/icon_rust_active.svg" alt="Иконка игры Rust">
+                            </div>
+                            <span class="contentSelect__text">Rust</span>
+                        </div>
+
+                        <div class="contentSelect__item">
+                            <div class="contentSelect__picture">
+                                <img class="contentSelect__img" src="./img/game_icons/icon_dbd_active.svg" alt="Иконка игры Dead By Daylight">
+                            </div>
+                            <span class="contentSelect__text">Dead By Daylight</span>
+                        </div>
+
+                        <div class="contentSelect__item">
+                            <div class="contentSelect__picture">
+                                <img class="contentSelect__img" src="./img/game_icons/icon_tarkov_active.svg" alt="Иконка игры Escape From Tarkov">
+                            </div>
+                            <span class="contentSelect__text">Escape from tarkov</span>
+                        </div>
+
+                        <div class="contentSelect__item">
+                            <div class="contentSelect__picture">
+                                <img class="contentSelect__img" src="./img/game_icons/icon_apex_active.svg" alt="Иконка игры Apex">
+                            </div>
+                            <span class="contentSelect__text">Apex</span>
+                        </div>
+
+                        <div class="contentSelect__item">
+                            <div class="contentSelect__picture">
+                                <img class="contentSelect__img" src="./img/game_icons/icon_valorant_active.svg" alt="Иконка игры Valorant">
+                            </div>
+                            <span class="contentSelect__text">Valorant</span>
+                        </div>
+
+                        <div class="contentSelect__item">
+                            <div class="contentSelect__picture">
+                                <img class="contentSelect__img" src="./img/game_icons/icon_warzone_active.svg" alt="Иконка игры Warzone">
+                            </div>
+                            <span class="contentSelect__text">Warzone</span>
+                        </div>
+
+                    </div>
+
+                    <div class="modal__versions">
+                        <a href="#" class="btn btn--secondary">Full version</a>
+                        <a href="#" class="btn" disabled="">Lite version</a>
+                    </div>
+
+                </div> 
+                <div class="modal__gameRegion">
+                    <div class="regionSelector">
+                        <div class="regionSelector__items">
+                            <label class="regionSelector__item">
+                                <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector">
+                                <div class="regionSelector__itemCover">
+                                    <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                    <span class="regionSelector__name">CIS region</span>
+                                </div>
+                            </label>
+                            <label class="regionSelector__item">
+                                <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector" checked>
+                                <div class="regionSelector__itemCover">
+                                    <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                    <span class="regionSelector__name">Global Region</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="daySelector">
+                        <div class="daySelector__items">
+                            <label class="daySelector__item">
+                                <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                <div class="daySelector__itemCover">
+                                    <span class="daySelector__duration">1 day</span>
+                                    <span class="daySelector__cost">499₽</span>
+                                </div>
+                            </label>
+                            <label class="daySelector__item">
+                                <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                <div class="daySelector__itemCover">
+                                    <span class="daySelector__duration">7 days</span>
+                                    <span class="daySelector__cost">499₽</span>
+                                </div>
+                            </label>
+                            <label class="daySelector__item">
+                                <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                <div class="daySelector__itemCover">
+                                    <span class="daySelector__duration">30 days</span>
+                                    <span class="daySelector__cost">3999₽</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__acceptOffer">
+                    <div class="acceptOffer">
+                        <div class="acceptOffer__checkbox">
+                            <label class="c-checkbox">
+                                <input class="c-checkbox__input visually-hidden" type="checkbox" />
+                                <div class="c-checkbox__box">
+                                    <svg class="c-checkbox__icon icon icon-check_basic"><use xlink:href="img/sprite.svg#check_basic"></use></svg>
+                                </div>
+                                <span class="c-checkbox__text">Accept the</span>
+                            </label>
+                        </div>
+
+                        <div class="acceptOffer__link">
+                            <a href="#">offer agreement</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="modal" id="modal_second">
-    <div class="modal__body">
-        <div class="modal__header">
-            <h2 class="blockTitle">Хей, это уже 2ая модалка!</h2>
+    <div class="modal__footer modal__footer--subscribe">
+        <div class="modal__pricing">
+            <span class="modal__cost">1999₽</span> / <span class="modal__duration">7 days</span>
         </div>
-        <div class="modal__close" data-closeModal>
-            <svg class='icon icon-close'><use xlink:href='img/sprite.svg#close'></use></svg>
-        </div>
-        <div class="modal__content">
-            <p class="modal__text">
-                Просто текст из модалки 2...
-            </p>
-            <div class="modal__button">
-                <button class="btn btn--primary" data-modal="modal_third">Еще модалка</button>
-            </div>
-        </div>
+        <a href="#" class="btn btn--success">Buy subscription</a>
     </div>
 </div>
 
-<div class="modal" id="modal_third">
-    <div class="modal__body">
-        <div class="modal__header">
-            <h2 class="blockTitle">Хей, а это уже 3ая модалка! Ого</h2>
-        </div>
-        <div class="modal__close" data-closeModal>
-            <svg class='icon icon-close'><use xlink:href='img/sprite.svg#close'></use></svg>
-        </div>
+<div class="modal" id="modal_offer">
+    <div class="modal__container">
         <div class="modal__content">
-            <p class="modal__text">
-                Просто текст из модалки 3...
-            </p>
-            <div class="modal__button">
-                <button class="btn btn--primary" data-closeModal>Окей</button>
+            <div class="modal__header modal__spaceBorder">
+                <h2 class="modal__title">Offer Agreement</h2>
+                <img class="modal__close" src="./img/modal_close.svg" alt="Иконка закрытия модалки" data-closeModal>
+            </div>
+            <div class="modal__body">
+                <p class="modal__text">
+                    Пользовательское соглашение об использовании программного обеспечения конечными пользователями Это соглашение об использовании 
+                    программного обеспечения («Соглашение») заключено и исполняется: разработчиками программ сайта https://more-cheats.com и Вами, 
+                    физическим или юридическим лицом, выступающим в качестве конечного пользователя (далее просто «Пользователь»), и подтверждает 
+                    предоставленное Вам право на использование Программного обеспечения, определенного в статье 1 настоящего Соглашения. Экземпляр 
+                    Программного обеспечения, определенного в статье 1 настоящего Соглашения,
+                </p>
             </div>
         </div>
+    </div>
+    <div class="modal__footer modal__footer--full">
+        <a href="#" class="btn btn--primary">I accept</a>
     </div>
 </div>
 

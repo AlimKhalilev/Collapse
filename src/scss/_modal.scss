@@ -8,11 +8,9 @@
     transition: 0.3s ease-in-out;
     z-index: 21;
 
-    padding: 3.5rem;
     border-radius: 0.8rem;
-    box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.1);
-    background-color: $color_white;
-    width: 34rem;
+    background-color: $color_baseCard__bg_hover;
+    width: 27rem;
 
     &.visible {
         top: 50%;
@@ -20,72 +18,190 @@
 
     @media ($media_xs) {
         width: 90%;
-        padding: 1.5rem;
     }
 
-    // .modal__body
+    // .modal__container
 
-    &__body {
-        max-height: 80vh;
-        overflow-y: auto;
-    }
-
-    // .modal__header
-
-    &__header {
-        text-align: center;
-        line-height: 1.27;
-        margin-bottom: 2.5rem;
-    }
-
-    // .modal__close
-
-    &__close {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 2.8rem;
-        width: 2.8rem;
-        box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.16);
-        transform: translate(40%, -40%);
-        background-color: $color_white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.95rem;
-        cursor: pointer;
-
-        svg {
-            fill: $color_black_main;
-        }
+    &__container {
+        padding: 1.875rem;
     }
 
     // .modal__content
 
     &__content {
-        text-align: center;
+
     }
 
-    // .modal__img
+    // .modal__spaceBorder
 
-    &__img {
-        svg {
-            max-width: 10rem;
+    &__spaceBorder {
+        padding-bottom: 1.875rem;
+        margin-bottom: 1.875rem;
+        border-bottom: 1px solid $color_block_border;
+    }
+
+    // .modal__header
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .modal__body
+
+    &__body {
+        overflow-y: auto;
+        max-height: 65vh;
+
+        @media ($media_sm) {
+            padding: 0 4px;
+            max-height: 45vh;
         }
+
+        &::-webkit-scrollbar-track {
+            background-color: $color_block_border;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 1px;
+            background-color: $color_block_border;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: $color_text;
+        }
+    }
+
+    // .modal__title
+
+    &__title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: $color_white;
     }
 
     // .modal__text
 
     &__text {
-        padding: 1rem 0;
+        font-size: 0.875rem;
+        color: $color_text_secondary;
     }
 
-    // .modal__button
+    // .modal__close
 
-    &__button {
+    &__close {
+        @include cursorPointer;
+    }
+
+    // .modal__footer
+
+    &__footer {
+        background-color: $color_modal_footer_bg;
+        padding: 1.25rem 1.875rem;
+
+        // .modal__footer--full
+
+        &--full {
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        // .modal__footer--subscribe
+
+        &--subscribe {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media ($media_sm) {
+                flex-direction: column;
+                align-items: initial;
+                text-align: center;
+
+                .btn {
+                    margin-top: 0.5rem;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    // .modal__pricing
+
+    &__pricing {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    // .modal__cost
+
+    &__cost {
+        font-size: 1.75rem;
+        color: $color_white;
+    }
+
+    // .modal__duration
+
+    &__duration {
+        font-size: 1rem;
+        color: $color_text_secondary;
+    }
+
+    // .modal__versions
+
+    &__versions {
+        display: flex;
+        margin-top: 1rem;
+
+        @media ($media_sm) {
+            flex-direction: column;
+        }
+
+        .btn {
+            flex-basis: 100%;
+            justify-content: center;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+
+                @media ($media_sm) {
+                    margin: 0 0 0.5rem 0;
+                }
+            }
+        }
 
     }
+
+    &__gameVersion {
+
+    }
+
+    // .modal__gameRegion
+
+    &__gameRegion {
+        .regionSelector {
+            margin-bottom: 1rem;
+
+            &__item {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    // .modal__acceptOffer
+
+    &__acceptOffer {
+        margin-top: 1.75rem;
+        
+        .acceptOffer {
+            justify-content: center;
+        }
+    }
+
 }
 
 // === / Modal

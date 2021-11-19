@@ -1813,3 +1813,34 @@ document.querySelectorAll(".productMenu__radio").forEach((menuRadio, id) => {
         productMenuSwiper.slideTo(id, 500, true)
     })
 });
+
+// -------------------------
+
+const subscriptionSwiper = new Swiper('.subscription__swiper', { // SUBSCRIPTION
+    slidesPerView: 3,
+    spaceBetween: 28,
+    grabCursor: true,
+
+    pagination: {
+        el: ".subscription__cards .swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".subscription__cards .swiper-button-next",
+        prevEl: ".subscription__cards .swiper-button-prev",
+    },
+    breakpoints: {
+        // when window width is >= 100px
+        100: {
+            slidesPerView: 1
+        },
+        // when window width is >= 576px
+        576: {
+            slidesPerView: 2
+        },
+        // when window width is >= 768px
+        768: {
+            slidesPerView: 3
+        }
+    }
+});

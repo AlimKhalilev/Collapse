@@ -21,10 +21,12 @@ $color_developingBg: rgba(100, 209, 210, 0.05);
 $color_header: #1E2430;
 $color_bg_main: #1A1F29;
 $color_bg_advantages: #171B25;
+$color_bg_subscription: #141721;
 $color_bg_footer: #13161F;
 $color_bg_gui: linear-gradient(180deg, #171A25 0%, #151823 100%);
 $color_bg_checkbox: rgba(149, 98, 238, 0.25);
 $color_block_border: rgba(196, 196, 196, 0.04);
+$color_modal_footer_bg: rgba(196, 196, 196, 0.01);
 
 $color_btn_disabled: rgba(44, 48, 60, 0.12);
 
@@ -66,3 +68,9 @@ $color_guiPlayer_border: #DFDFE0;
 $color_guiPlayer_hp: #20AB71;
 
 $color_gameSelector_bg: #202430;
+$color_daySelect_bg: #2B3143;
+$color_daySelect_border: #333A50;
+$color_daySelect_bgHover: rgba(51, 58, 80, 0.12);
+$color_daySelect_bgSelect: rgba(149, 98, 238, 0.12);
+
+$color_regionSelect_bg: #292D3C;
