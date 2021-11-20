@@ -843,6 +843,10 @@
         max-width: 54.125rem;
         margin: 0 auto;
 
+        .swiper-wrapper {
+            height: auto;
+        }
+
         .swiper-button {
             transform: translateX(4rem);
 
