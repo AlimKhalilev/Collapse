@@ -142,7 +142,7 @@
 <menu class="productMenu">
     <div class="section__inner">
         <div class="productMenu__content">
-            <ul class="productMenu__list">
+            <ul class="productMenu__list customScroll">
                 <li class="productMenu__elem">
                     <label class="productMenu__label" style="--hoverTextColor: #C5412B;">
                         <input class="productMenu__radio visually-hidden" type="radio" name="productMenu">
@@ -526,7 +526,7 @@
                                         </div>
                                     </div>
                                     <div class="productInfo__btn mobHidden">
-                                        <a href="#" class="btn btn--primary">Go to prices</a>
+                                        <a href="#" class="btn btn--primary" data-scroll=".subscription">Go to prices</a>
                                     </div>
                                     <div class="productInfo__interact mobHidden">
                                         <div class="interact">
@@ -1213,17 +1213,17 @@
                         <div class="regionSelector">
                             <div class="regionSelector__items">
                                 <label class="regionSelector__item">
-                                    <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorPage">
-                                    <div class="regionSelector__itemCover">
-                                        <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
-                                        <span class="regionSelector__name">CIS region</span>
-                                    </div>
-                                </label>
-                                <label class="regionSelector__item">
-                                    <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorPage" checked>
+                                    <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector" checked>
                                     <div class="regionSelector__itemCover">
                                         <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
                                         <span class="regionSelector__name">Global Region</span>
+                                    </div>
+                                </label>
+                                <label class="regionSelector__item">
+                                    <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector">
+                                    <div class="regionSelector__itemCover">
+                                        <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                        <span class="regionSelector__name">CIS region</span>
                                     </div>
                                 </label>
                             </div>
@@ -1473,7 +1473,7 @@
                 <h2 class="modal__title">Buy subscription</h2>
                 <img class="modal__close" src="./img/modal_close.svg" alt="Иконка закрытия модалки" data-closeModal>
             </div>
-            <div class="modal__body">
+            <div class="modal__body customScroll">
                 <div class="modal__gameVersion modal__spaceBorder">
 
                     <div class="contentSelect" data-contentSelect="selectGame" data-mouseLeave>
@@ -1533,17 +1533,17 @@
                     <div class="regionSelector">
                         <div class="regionSelector__items">
                             <label class="regionSelector__item">
-                                <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector">
-                                <div class="regionSelector__itemCover">
-                                    <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
-                                    <span class="regionSelector__name">CIS region</span>
-                                </div>
-                            </label>
-                            <label class="regionSelector__item">
                                 <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector" checked>
                                 <div class="regionSelector__itemCover">
                                     <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
                                     <span class="regionSelector__name">Global Region</span>
+                                </div>
+                            </label>
+                            <label class="regionSelector__item">
+                                <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector">
+                                <div class="regionSelector__itemCover">
+                                    <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                    <span class="regionSelector__name">CIS region</span>
                                 </div>
                             </label>
                         </div>
@@ -1610,7 +1610,7 @@
                 <h2 class="modal__title">Offer Agreement</h2>
                 <img class="modal__close" src="./img/modal_close.svg" alt="Иконка закрытия модалки" data-closeModal>
             </div>
-            <div class="modal__body">
+            <div class="modal__body customScroll">
                 <p class="modal__text">
                     Пользовательское соглашение об использовании программного обеспечения конечными пользователями Это соглашение об использовании 
                     программного обеспечения («Соглашение») заключено и исполняется: разработчиками программ сайта https://more-cheats.com и Вами, 

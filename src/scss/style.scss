@@ -367,6 +367,12 @@
         pointer-events: initial;
     }
 
+    &:not(.active) {
+        .swiper-slide-active {
+            pointer-events: none;
+        }
+    }
+
     // .productMenu__content
 
     &__content {
@@ -380,10 +386,6 @@
     &__swiper {
         .swiper-slide {
             background-color: $color_bg_menu;
-
-            &-active {
-                pointer-events: none;
-            }
         }
         
     }
@@ -391,6 +393,9 @@
     // .productMenu__list
 
     &__list {
+        max-height: 22rem;
+        overflow-y: auto;
+        padding: 0.5rem 3rem 0.5rem 0.5rem;
     }
 
     // .productMenu__elem

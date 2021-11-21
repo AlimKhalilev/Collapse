@@ -4,9 +4,16 @@ class MainSlider {
     static slideBar = document.querySelector(".main__top .main__timer");
     static radioSelector = document.querySelectorAll(".gameSelector .gameSelector__radio");
 
+    static productBtnLink = document.querySelector(".main__top .main__buttonProduct");
+    static productLinks = document.querySelectorAll(".main__slider [data-link]");
+
     static mainSlider;
     static mainGameSlider;
     static mainStatusSlider;
+
+    static updateSlideLink(index) {
+        this.productBtnLink.setAttribute("href", this.productLinks[index].dataset.link);
+    }
 
     static updateSlideBar(index, isFirst) {
         this.slideBar.innerHTML = "";
@@ -45,6 +52,7 @@ class MainSlider {
                 on: {
                     slideChange: () => {
                         this.updateSlideBar(this.mainSlider.realIndex);
+                        this.updateSlideLink(this.mainSlider.realIndex);
                     }
                 },
             
@@ -78,6 +86,7 @@ class MainSlider {
             this.mainGameSlider.controller.control = this.mainStatusSlider;
     
             this.updateSlideBar(0, true);
+            this.updateSlideLink(this.mainSlider.realIndex);
             this.initRadioSelector();
         }
     }

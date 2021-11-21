@@ -59,18 +59,6 @@
             max-height: 45vh;
         }
 
-        &::-webkit-scrollbar-track {
-            background-color: $color_block_border;
-        }
-        
-        &::-webkit-scrollbar {
-            width: 1px;
-            background-color: $color_block_border;
-        }
-        
-        &::-webkit-scrollbar-thumb {
-            background-color: $color_text;
-        }
     }
 
     // .modal__title
