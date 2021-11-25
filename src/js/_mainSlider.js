@@ -12,7 +12,10 @@ class MainSlider {
     static mainStatusSlider;
 
     static updateSlideLink(index) {
-        this.productBtnLink.setAttribute("href", this.productLinks[index].dataset.link);
+        let productLink = this.productLinks[index];
+        if (productLink !== undefined) {
+            this.productBtnLink.setAttribute("href", productLink.dataset.link);
+        }
     }
 
     static updateSlideBar(index, isFirst) {
@@ -23,7 +26,9 @@ class MainSlider {
         slideBarProgress.setAttribute("style", `transition: ${isFirst ? this.slideDelay : this.slideDelay + 500}ms linear`);
         this.slideBar.appendChild(slideBarProgress);
 
-        this.radioSelector[index].checked = true; // переключить радио переключатель (под основным слайдером)
+        if (this.radioSelector[index] !== undefined) {
+            this.radioSelector[index].checked = true; // переключить радио переключатель (под основным слайдером)
+        }
 
         setTimeout(() => {
             slideBarProgress.classList.add("main__timerBar--fill");

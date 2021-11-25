@@ -4142,7 +4142,6 @@ body::-webkit-scrollbar-thumb {
 
 .scroll-block-dummy::-webkit-scrollbar {
   width: 0.25rem;
-  background-color: #222530;
 }
 
 .section {
@@ -5534,7 +5533,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
 }
 
-.acceptOffer__link a {
+.acceptOffer__link button {
   margin-left: 0.375rem;
   font-size: 0.875rem;
   color: #EEEDF6;
@@ -5542,6 +5541,10 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
           transform: translateY(1px);
+  text-decoration: underline;
+  border: none;
+  background: unset;
+  padding: 0;
 }
 
 /* СТИЛИ КОМПОНЕНТОВ (первая буква c- означает custom) */
@@ -7323,6 +7326,10 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   }
 
   .regionSelector__itemCover {
+    cursor: pointer;
+  }
+
+  .acceptOffer__link button {
     cursor: pointer;
   }
 

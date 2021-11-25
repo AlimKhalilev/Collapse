@@ -1358,13 +1358,20 @@
 
     &__link {
 
-        a {
+        button {
             margin-left: 0.375rem;
             font-size: 0.875rem;
             color: $color_white;
 
             display: inline-block;
             transform: translateY(1px);
+            text-decoration: underline;
+
+            border: none;
+            background: unset;
+            padding: 0;
+
+            @include cursorPointer();
         }
     }
 }

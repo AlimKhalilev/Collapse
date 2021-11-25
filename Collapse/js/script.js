@@ -45,7 +45,7 @@ document.addEventListener("keydown", function(e) {
 });
   
 function getScrollBarWidth() { // получаем ширину скролла
-    let vh = Math.max(g_html.clientHeight || 0, window.innerHeight || 0); // высота видимой страницы
+    let vh = Math.max(window.innerHeight || 0); // высота видимой страницы
     let height = Math.max(g_body.scrollHeight, g_body.offsetHeight, g_html.clientHeight, g_html.scrollHeight, g_html.offsetHeight); // общ. высота страницы
 
     const scrollBlock = document.createElement("div");
@@ -1715,7 +1715,10 @@ class MainSlider {
     static mainStatusSlider;
 
     static updateSlideLink(index) {
-        this.productBtnLink.setAttribute("href", this.productLinks[index].dataset.link);
+        let productLink = this.productLinks[index];
+        if (productLink !== undefined) {
+            this.productBtnLink.setAttribute("href", productLink.dataset.link);
+        }
     }
 
     static updateSlideBar(index, isFirst) {
@@ -1726,7 +1729,9 @@ class MainSlider {
         slideBarProgress.setAttribute("style", `transition: ${isFirst ? this.slideDelay : this.slideDelay + 500}ms linear`);
         this.slideBar.appendChild(slideBarProgress);
 
-        this.radioSelector[index].checked = true; // переключить радио переключатель (под основным слайдером)
+        if (this.radioSelector[index] !== undefined) {
+            this.radioSelector[index].checked = true; // переключить радио переключатель (под основным слайдером)
+        }
 
         setTimeout(() => {
             slideBarProgress.classList.add("main__timerBar--fill");
@@ -1821,6 +1826,13 @@ document.querySelectorAll(".productMenu__radio").forEach((menuRadio, id) => {
     menuRadio.addEventListener("change", () => {
         productMenuSwiper.slideTo(id, 500, true)
     })
+});
+
+document.querySelectorAll(".fastBuy a").forEach(elem => {
+    elem.addEventListener("click", function(e) {
+        e.preventDefault();
+        Modal.show("modal_buysub");
+    });
 });
 
 // -------------------------

@@ -47,6 +47,13 @@ document.querySelectorAll(".productMenu__radio").forEach((menuRadio, id) => {
     })
 });
 
+document.querySelectorAll(".fastBuy a").forEach(elem => {
+    elem.addEventListener("click", function(e) {
+        e.preventDefault();
+        Modal.show("modal_buysub");
+    });
+});
+
 // -------------------------
 
 const subscriptionSwiper = new Swiper('.subscription__swiper', { // SUBSCRIPTION
