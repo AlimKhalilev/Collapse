@@ -1937,7 +1937,10 @@ modalGameContents.forEach((slide, slideID) => {
     });
 });
 
-modalGameBuyRadio.forEach(radio => {
+modalGameBuyRadio.forEach((radio, id) => {
+    if (id === 0) { // стартовая инициализация данных в футере модалки
+        updateProductModalInfo(radio);
+    }
 
     radio.addEventListener("change", () => {
         updateProductModalInfo(radio);
@@ -1967,7 +1970,7 @@ modalGamesContentSelect.forEach((game, id) => {
         modalGamesSwiper.slideTo(id, 0, true);
 
         let contentBaseRadio = modalGameContents[id].querySelector(".daySelector__radio"); // получаем первое радио из списка текущей игры
-        if (contentBaseRadio !== undefined) {
+        if (contentBaseRadio !== null) {
             contentBaseRadio.setAttribute("checked", ""); // выбираем его
             updateProductModalInfo(contentBaseRadio); // переключаем инфо в контенте футера модалки
         }

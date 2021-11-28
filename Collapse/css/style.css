@@ -7111,6 +7111,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
       -ms-transform: translateX(50%);
           transform: translateX(50%);
   max-width: 18rem;
+  min-width: 18rem;
 }
 
 .main__status {
@@ -7120,6 +7121,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
       -ms-transform: translateX(-80%);
           transform: translateX(-80%);
   max-width: 15rem;
+  min-width: 15rem;
 }
 
 .main__status .subSliderInfo {
@@ -7323,6 +7325,44 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   background-color: #9562EE;
 }
 
+.gallery {
+  background: -webkit-gradient(linear, left top, left bottom, from(#171A25), to(#151823));
+  background: -o-linear-gradient(top, #171A25 0%, #151823 100%);
+  background: linear-gradient(180deg, #171A25 0%, #151823 100%);
+  padding: var(--section_indent) 0;
+}
+
+.gallery__inner {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.gallery__header {
+  text-align: center;
+  margin-bottom: 3.125rem;
+}
+
+.gallery__video {
+  position: relative;
+  padding: 28.125%;
+  margin-bottom: 2rem;
+}
+
+.gallery__video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  justify-items: center;
+}
+
 @media (min-width: 769px) {
   .deskHidden {
     display: none;
@@ -7495,6 +7535,10 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 @media (max-width: 1300px) {
   .section__inner {
     max-width: 950px;
+  }
+
+  .gallery__images {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -7858,6 +7902,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .main__game {
     max-width: 10rem;
+    min-width: 10rem;
     left: 0;
     right: unset;
     bottom: -2.6rem;
@@ -7871,6 +7916,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .main__status {
     max-width: 8rem;
+    min-width: 8rem;
     right: 1rem;
     left: unset;
   }
@@ -7903,6 +7949,10 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .subscription__cards .swiper-button {
     display: none;
+  }
+
+  .gallery__images {
+    grid-template-columns: 1fr;
   }
 }
 
