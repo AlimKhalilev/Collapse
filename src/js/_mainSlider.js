@@ -38,7 +38,7 @@ class MainSlider {
     static initRadioSelector() { // инициализируем радио кнопки игр под основным слайдером
         this.radioSelector.forEach((radio, id) => {
             radio.addEventListener("change", () => {
-                this.mainSlider.slideTo(id, this.fadeSpeed, true)
+                this.mainSlider.slideTo(id, this.fadeSpeed, true);
             });
         })
     }

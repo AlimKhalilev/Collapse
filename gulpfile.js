@@ -33,7 +33,7 @@ let { src, dest } = require("gulp"),
    browsersync = require("browser-sync").create();
    fileinclude = require("gulp-file-include"),
    del = require("del"),
-   scss = require("gulp-sass"),
+   scss = require('gulp-sass')(require('node-sass')),
    autoprefixer = require("gulp-autoprefixer"),
    group_media = require("gulp-group-css-media-queries"),
    clean_css = require("gulp-clean-css"),
@@ -119,20 +119,20 @@ function css() {
 
 function images() {
    return src(path.src.img)
-       .pipe(
-           webp({
-               quality: 95
-           })
-       )
-       .pipe(dest(path.build.img))
-       .pipe(src(path.src.img))
-       .pipe(
-           imagemin({
-               progressive: true,
-               interlaced: true,
-               optimizationLevel: 3 // 0 to 7
-           })
-       )
+    //    .pipe(
+    //        webp({
+    //            quality: 95
+    //        })
+    //    )
+    //   .pipe(dest(path.build.img))
+    //    .pipe(src(path.src.img))
+    //    .pipe(
+    //        imagemin({
+    //            progressive: true,
+    //            interlaced: true,
+    //            optimizationLevel: 3 // 0 to 7
+    //        })
+    //    )
        .pipe(dest(path.build.img))
        .pipe(browsersync.stream())
 }

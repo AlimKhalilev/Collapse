@@ -55,55 +55,454 @@
 
                     </div>
 
-                    <div class="modal__versions">
+                    <!-- <div class="modal__versions">
                         <a href="#" class="btn btn--secondary">Full version</a>
                         <a href="#" class="btn" disabled="">Lite version</a>
-                    </div>
+                    </div> -->
 
                 </div> 
-                <div class="modal__gameRegion">
-                    <div class="regionSelector">
-                        <div class="regionSelector__items">
-                            <label class="regionSelector__item">
-                                <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector" checked>
-                                <div class="regionSelector__itemCover">
-                                    <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
-                                    <span class="regionSelector__name">Global Region</span>
-                                </div>
-                            </label>
-                            <label class="regionSelector__item">
-                                <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelector">
-                                <div class="regionSelector__itemCover">
-                                    <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
-                                    <span class="regionSelector__name">CIS region</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
 
-                    <div class="daySelector">
-                        <div class="daySelector__items">
-                            <label class="daySelector__item">
-                                <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
-                                <div class="daySelector__itemCover">
-                                    <span class="daySelector__duration">1 day</span>
-                                    <span class="daySelector__cost">499₽</span>
+                <div class="modal__gameRegion">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="regionSelector">
+                                    <div class="regionSelector__items">
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-1" checked>
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                                <span class="regionSelector__name">Global Region</span>
+                                            </div>
+                                        </label>
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-1">
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                                <span class="regionSelector__name">CIS region 1</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
-                            </label>
-                            <label class="daySelector__item">
-                                <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
-                                <div class="daySelector__itemCover">
-                                    <span class="daySelector__duration">7 days</span>
-                                    <span class="daySelector__cost">499₽</span>
+            
+                                <div class="daySelector daySelector--visible">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#1">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">10$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#2">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">13$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#3">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">18$</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
-                            </label>
-                            <label class="daySelector__item">
-                                <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
-                                <div class="daySelector__itemCover">
-                                    <span class="daySelector__duration">30 days</span>
-                                    <span class="daySelector__cost">3999₽</span>
+
+                                <div class="daySelector">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">1000₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">1300₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">1900₽</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
-                            </label>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="regionSelector">
+                                    <div class="regionSelector__items">
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-2" checked>
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                                <span class="regionSelector__name">Global Region</span>
+                                            </div>
+                                        </label>
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-2">
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                                <span class="regionSelector__name">CIS region 2</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+            
+            
+                                <div class="daySelector daySelector--visible">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">20$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">23$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">28$</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="daySelector">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">2000₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">2300₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">2900₽</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="regionSelector">
+                                    <div class="regionSelector__items">
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-3" checked>
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                                <span class="regionSelector__name">Global Region</span>
+                                            </div>
+                                        </label>
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-3">
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                                <span class="regionSelector__name">CIS region 3</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+            
+                                <div class="daySelector daySelector--visible">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">30$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">33$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">38$</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="daySelector">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">3000₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">3300₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">3900₽</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="regionSelector">
+                                    <div class="regionSelector__items">
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-4" checked>
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                                <span class="regionSelector__name">Global Region</span>
+                                            </div>
+                                        </label>
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-4">
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                                <span class="regionSelector__name">CIS region 4</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+            
+            
+                                <div class="daySelector daySelector--visible">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">40$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">43$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">48$</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="daySelector">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">4000₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">4300₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">4900₽</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="regionSelector">
+                                    <div class="regionSelector__items">
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-5" checked>
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                                <span class="regionSelector__name">Global Region</span>
+                                            </div>
+                                        </label>
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-5">
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                                <span class="regionSelector__name">CIS region 5</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+            
+                                <div class="daySelector daySelector--visible">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">50$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">53$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">58$</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="daySelector">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">5000₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">5300₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">5900₽</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="regionSelector">
+                                    <div class="regionSelector__items">
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-6" checked>
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_europe.svg" alt="Флаг Евросоюза">
+                                                <span class="regionSelector__name">Global Region</span>
+                                            </div>
+                                        </label>
+                                        <label class="regionSelector__item">
+                                            <input class="regionSelector__radio visually-hidden" type="radio" name="regionSelectorModal-6">
+                                            <div class="regionSelector__itemCover">
+                                                <img class="regionSelector__img" src="./img/countries/flag_russia.svg" alt="Флаг России">
+                                                <span class="regionSelector__name">CIS region 6</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+            
+            
+                                <div class="daySelector daySelector--visible">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">60$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">65$</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">65$</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="daySelector">
+                                    <div class="daySelector__items">
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">1 day</span>
+                                                <span class="daySelector__cost">699₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector" checked>
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">7 days</span>
+                                                <span class="daySelector__cost">6999₽</span>
+                                            </div>
+                                        </label>
+                                        <label class="daySelector__item">
+                                            <input class="daySelector__radio visually-hidden" type="radio" name="daySelector">
+                                            <div class="daySelector__itemCover" data-link="#">
+                                                <span class="daySelector__duration">30 days</span>
+                                                <span class="daySelector__cost">6999₽</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,9 +528,9 @@
     </div>
     <div class="modal__footer modal__footer--subscribe">
         <div class="modal__pricing">
-            <span class="modal__cost">1999₽</span> / <span class="modal__duration">7 days</span>
+            <span class="modal__cost">-</span> / <span class="modal__duration">-</span>
         </div>
-        <a href="#" class="btn btn--success">Buy subscription</a>
+        <a href="#" class="modal__buySub btn btn--success" disabled>Buy subscription</a>
     </div>
 </div>
 

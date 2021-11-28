@@ -1741,7 +1741,7 @@ class MainSlider {
     static initRadioSelector() { // инициализируем радио кнопки игр под основным слайдером
         this.radioSelector.forEach((radio, id) => {
             radio.addEventListener("change", () => {
-                this.mainSlider.slideTo(id, this.fadeSpeed, true)
+                this.mainSlider.slideTo(id, this.fadeSpeed, true);
             });
         })
     }
@@ -1846,10 +1846,10 @@ const subscriptionSwiper = new Swiper('.subscription__swiper', { // SUBSCRIPTION
         el: ".subscription__cards .swiper-pagination",
         clickable: true,
     },
-    navigation: {
-        nextEl: ".subscription__cards .swiper-button-next",
-        prevEl: ".subscription__cards .swiper-button-prev",
-    },
+    // navigation: {
+    //     nextEl: ".subscription__cards .swiper-button-next",
+    //     prevEl: ".subscription__cards .swiper-button-prev",
+    // },
     breakpoints: {
         // when window width is >= 100px
         100: {
@@ -1863,5 +1863,87 @@ const subscriptionSwiper = new Swiper('.subscription__swiper', { // SUBSCRIPTION
         768: {
             slidesPerView: 3
         }
+    }
+});
+
+// -------- Меняем блок карточек при изменении региона в подписке (продукт)
+
+let subscribeRadios = document.querySelectorAll(".subscription__region .regionSelector__radio");
+let subscribeCards = document.querySelectorAll(".subscription__cards");
+
+subscribeRadios.forEach(subscribeRadio => {
+    subscribeRadio.addEventListener("change", () => {
+        subscribeCards.forEach(card => {
+            card.classList.toggle("subscription__cards--visible");
+        })
+    });
+});
+
+// -----------------------------------------------------------------------------
+
+// ---------------------- Переключаем слайд товара в модалке -------------------
+
+const modalGamesSwiper = new Swiper('.modal__gameRegion .swiper', {
+    allowTouchMove: false
+});
+
+let modalGamesContentSelect = document.querySelectorAll(".modal__gameVersion .contentSelect__radio");
+
+modalGamesContentSelect.forEach((game, id) => {
+    game.addEventListener("change", () => {
+        //console.log(id);
+        modalGamesSwiper.slideTo(id, 0, true);
+    });
+});
+
+// -----------------------------------------------------------------------------
+
+// ---------------------- ПЕРЕКЛЮЧАТЕЛЬ ТОВАРОВ В МОДАЛКЕ ----------------------
+
+let modalGameContents = document.querySelectorAll(".modal__gameRegion .swiper-slide");
+let modalGameBuyRadio = document.querySelectorAll(".modal__gameRegion .daySelector__radio");
+
+let modalPricingCost = document.querySelector(".modal__footer .modal__cost");
+let modalPricingDuration = document.querySelector(".modal__footer .modal__duration");
+let modalBuyLink = document.querySelector(".modal__footer .modal__buySub");
+
+let modalOfferCheckbox = document.querySelector(".modal__acceptOffer .c-checkbox__input");
+
+modalGameContents.forEach((slide, slideID) => {
+    let radioSelectors = slide.querySelectorAll(".regionSelector__radio");
+    let contentGames = slide.querySelectorAll(".daySelector");
+
+    radioSelectors.forEach(radio => {
+        radio.addEventListener("change", () => {
+            //console.log(slideID);
+
+            contentGames.forEach(daySelector => {
+                daySelector.classList.toggle("daySelector--visible");
+            });
+        });
+    });
+});
+
+modalGameBuyRadio.forEach(radio => {
+
+    radio.addEventListener("change", () => {
+        let itemCover = radio.nextElementSibling;
+        let needHref = itemCover.dataset.link;
+
+        let duration = itemCover.querySelector(".daySelector__duration").innerHTML;
+        let cost = itemCover.querySelector(".daySelector__cost").innerHTML;
+
+        modalPricingDuration.innerHTML = duration;
+        modalPricingCost.innerHTML = cost;
+        modalBuyLink.setAttribute("href", needHref);
+    });
+});
+
+modalOfferCheckbox.addEventListener("change", () => {
+    if (modalOfferCheckbox.checked) {
+        modalBuyLink.removeAttribute("disabled");
+    }
+    else {
+        modalBuyLink.setAttribute("disabled", "");
     }
 });

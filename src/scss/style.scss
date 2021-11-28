@@ -848,6 +848,12 @@
         max-width: 54.125rem;
         margin: 0 auto;
 
+        display: none;
+
+        &--visible {
+            display: block;
+        }
+
         .swiper-wrapper {
             height: auto;
         }
@@ -881,7 +887,7 @@
             }
         }
 
-        @media ($media_sm) {
+        @media ($media_xs) {
             max-width: 16.875rem;
 
             .swiper-button {

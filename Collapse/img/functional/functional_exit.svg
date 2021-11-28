@@ -1,1 +1,15 @@
-<svg width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity=".05" cx="55.189" cy="55.189" r="34.189" fill="url(#paint0_linear_469_559)"/><circle opacity=".1" cx="55" cy="55" r="43.5" stroke="#64D1D2"/><circle opacity=".05" cx="55" cy="55" r="54.5" stroke="#64D1D2"/><rect x="30" y="30" width="50" height="50" rx="25" fill="#64D1D2" fill-opacity=".1"/><path d="M52 64h-4a2 2 0 01-2-2V48a2 2 0 012-2h4m7 14l5-5-5-5m5 5H52" stroke="#64D1D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="paint0_linear_469_559" x1="21.265" y1="21" x2="81.486" y2="90.226" gradientUnits="userSpaceOnUse"><stop stop-color="#678CA3"/><stop offset="1" stop-color="#6A8EA4"/></linearGradient></defs></svg>
+<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.05" cx="55.1892" cy="55.1892" r="34.1892" fill="url(#paint0_linear_469_559)"/>
+<circle opacity="0.1" cx="55" cy="55" r="43.5" stroke="#64D1D2"/>
+<circle opacity="0.05" cx="55" cy="55" r="54.5" stroke="#64D1D2"/>
+<rect x="30" y="30" width="50" height="50" rx="25" fill="#64D1D2" fill-opacity="0.1"/>
+<path d="M52 64H48C47.4696 64 46.9609 63.7893 46.5858 63.4142C46.2107 63.0391 46 62.5304 46 62V48C46 47.4696 46.2107 46.9609 46.5858 46.5858C46.9609 46.2107 47.4696 46 48 46H52" stroke="#64D1D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M59 60L64 55L59 50" stroke="#64D1D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64 55H52" stroke="#64D1D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_469_559" x1="21.2645" y1="21" x2="81.4859" y2="90.226" gradientUnits="userSpaceOnUse">
+<stop stop-color="#678CA3"/>
+<stop offset="1" stop-color="#6A8EA4"/>
+</linearGradient>
+</defs>
+</svg>

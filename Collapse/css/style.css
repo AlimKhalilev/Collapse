@@ -2007,8 +2007,8 @@ button.swiper-pagination-bullet {
   }
 
   77.7% {
-    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
-            transform: skewX(0.39063deg) skewY(0.39063deg);
+    -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
+            transform: skewX(0.39062deg) skewY(0.39062deg);
   }
 
   88.8% {
@@ -2049,8 +2049,8 @@ button.swiper-pagination-bullet {
   }
 
   77.7% {
-    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
-            transform: skewX(0.39063deg) skewY(0.39063deg);
+    -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
+            transform: skewX(0.39062deg) skewY(0.39062deg);
   }
 
   88.8% {
@@ -5414,6 +5414,14 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
+.daySelector {
+  display: none;
+}
+
+.daySelector--visible {
+  display: block;
+}
+
 .daySelector__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5690,8 +5698,8 @@ body::-webkit-scrollbar-thumb {
 .btn[disabled] {
   background-color: rgba(44, 48, 60, 0.12);
   pointer-events: none;
-  border: 1px solid #2C303C;
-  padding: .6875rem 1.5rem;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #2C303C;
+          box-shadow: inset 0px 0px 0px 1px #2C303C;
   color: #515B76;
 }
 
@@ -6483,6 +6491,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 .modal__body {
   overflow-y: auto;
   max-height: 65vh;
+  padding: 4px;
 }
 
 .modal__title {
@@ -6553,6 +6562,11 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
 .modal__versions .btn:not(:last-child) {
   margin-right: 1rem;
+}
+
+.modal__gameVersion .contentSelect {
+  position: relative;
+  z-index: 2;
 }
 
 .modal__gameRegion .regionSelector {
@@ -7265,6 +7279,11 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   position: relative;
   max-width: 54.125rem;
   margin: 0 auto;
+  display: none;
+}
+
+.subscription__cards--visible {
+  display: block;
 }
 
 .subscription__cards .swiper-wrapper {
@@ -7863,14 +7882,6 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   .main__timer {
     display: none;
   }
-
-  .subscription__cards {
-    max-width: 16.875rem;
-  }
-
-  .subscription__cards .swiper-button {
-    display: none;
-  }
 }
 
 @media (max-width: 576px) {
@@ -7884,6 +7895,14 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .header__inner {
     width: 100%;
+  }
+
+  .subscription__cards {
+    max-width: 16.875rem;
+  }
+
+  .subscription__cards .swiper-button {
+    display: none;
   }
 }
 

@@ -53,6 +53,7 @@
     &__body {
         overflow-y: auto;
         max-height: 65vh;
+        padding: 4px;
 
         @media ($media_sm) {
             padding: 0 4px;
@@ -165,7 +166,10 @@
     }
 
     &__gameVersion {
-
+        .contentSelect {
+            position: relative;
+            z-index: 2;
+        }
     }
 
     // .modal__gameRegion
