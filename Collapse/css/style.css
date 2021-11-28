@@ -4427,7 +4427,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #222736;
 }
 
-.baseCard:hover .btn {
+.baseCard:hover .btn:not([disabled]) {
   background-color: #9562EE;
   color: #EEEDF6;
 }
@@ -4485,14 +4485,14 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-.baseCard__btn .btn {
+.baseCard__btn .btn.btn--secondary {
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.baseCard__btn .btn:hover {
+.baseCard__btn .btn.btn--secondary:hover {
   background-color: #605EBA;
 }
 

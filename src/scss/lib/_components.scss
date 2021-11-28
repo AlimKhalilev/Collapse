@@ -73,7 +73,7 @@
     &:hover {
         background-color: $color_baseCard__bg_hover;
 
-        .btn {
+        .btn:not([disabled]) {
             background-color: $color_purple;
             color: $color_white;
         }
@@ -158,7 +158,7 @@
         margin-top: 2rem;
         text-align: center;
 
-        .btn {
+        .btn.btn--secondary {
             width: 100%;
             justify-content: center;
 

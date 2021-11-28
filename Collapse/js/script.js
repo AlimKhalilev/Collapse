@@ -1881,24 +1881,37 @@ subscribeRadios.forEach(subscribeRadio => {
 
 // -----------------------------------------------------------------------------
 
-// ---------------------- Переключаем слайд товара в модалке -------------------
+// -------- Оживляем чекбокс agree в секции карточек подписки ------------------
 
-const modalGamesSwiper = new Swiper('.modal__gameRegion .swiper', {
-    allowTouchMove: false
-});
+let subscribeCardsBtns = document.querySelectorAll(".subscription__cards .baseCard__btn .btn");
+let subscribeAgreeCheckbox = document.querySelectorAll(".subscription__accept .c-checkbox__input");
 
-let modalGamesContentSelect = document.querySelectorAll(".modal__gameVersion .contentSelect__radio");
-
-modalGamesContentSelect.forEach((game, id) => {
-    game.addEventListener("change", () => {
-        //console.log(id);
-        modalGamesSwiper.slideTo(id, 0, true);
+subscribeAgreeCheckbox.forEach(checkboxAgree => {
+    checkboxAgree.addEventListener("change", () => {
+        if (checkboxAgree.checked) {
+            subscribeCardsBtns.forEach(item => item.removeAttribute("disabled"));
+        }
+        else {
+            subscribeCardsBtns.forEach(item => item.setAttribute("disabled", ""));
+        }
     });
 });
 
 // -----------------------------------------------------------------------------
 
 // ---------------------- ПЕРЕКЛЮЧАТЕЛЬ ТОВАРОВ В МОДАЛКЕ ----------------------
+
+function updateProductModalInfo(radio) { // функция переключения данных при изменении radio в футере модалки
+    let itemCover = radio.nextElementSibling;
+    let needHref = itemCover.dataset.link;
+
+    let duration = itemCover.querySelector(".daySelector__duration").innerHTML;
+    let cost = itemCover.querySelector(".daySelector__cost").innerHTML;
+
+    modalPricingDuration.innerHTML = duration;
+    modalPricingCost.innerHTML = cost;
+    modalBuyLink.setAttribute("href", needHref);
+}
 
 let modalGameContents = document.querySelectorAll(".modal__gameRegion .swiper-slide");
 let modalGameBuyRadio = document.querySelectorAll(".modal__gameRegion .daySelector__radio");
@@ -1927,19 +1940,11 @@ modalGameContents.forEach((slide, slideID) => {
 modalGameBuyRadio.forEach(radio => {
 
     radio.addEventListener("change", () => {
-        let itemCover = radio.nextElementSibling;
-        let needHref = itemCover.dataset.link;
-
-        let duration = itemCover.querySelector(".daySelector__duration").innerHTML;
-        let cost = itemCover.querySelector(".daySelector__cost").innerHTML;
-
-        modalPricingDuration.innerHTML = duration;
-        modalPricingCost.innerHTML = cost;
-        modalBuyLink.setAttribute("href", needHref);
+        updateProductModalInfo(radio);
     });
 });
 
-modalOfferCheckbox.addEventListener("change", () => {
+modalOfferCheckbox.addEventListener("change", () => { // переключатель политики конфиденциальности
     if (modalOfferCheckbox.checked) {
         modalBuyLink.removeAttribute("disabled");
     }
@@ -1947,3 +1952,26 @@ modalOfferCheckbox.addEventListener("change", () => {
         modalBuyLink.setAttribute("disabled", "");
     }
 });
+
+// ---------------------- Переключаем слайд товара в модалке -------------------
+
+const modalGamesSwiper = new Swiper('.modal__gameRegion .swiper', {
+    allowTouchMove: false
+});
+
+let modalGamesContentSelect = document.querySelectorAll(".modal__gameVersion .contentSelect__radio");
+
+modalGamesContentSelect.forEach((game, id) => {
+    game.addEventListener("change", () => {
+        //console.log(id);
+        modalGamesSwiper.slideTo(id, 0, true);
+
+        let contentBaseRadio = modalGameContents[id].querySelector(".daySelector__radio"); // получаем первое радио из списка текущей игры
+        if (contentBaseRadio !== undefined) {
+            contentBaseRadio.setAttribute("checked", ""); // выбираем его
+            updateProductModalInfo(contentBaseRadio); // переключаем инфо в контенте футера модалки
+        }
+    });
+});
+
+// -----------------------------------------------------------------------------
