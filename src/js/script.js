@@ -56,33 +56,40 @@ document.querySelectorAll(".fastBuy a").forEach(elem => {
 
 // -------------------------
 
-const subscriptionSwiper = new Swiper('.subscription__swiper', { // SUBSCRIPTION
+const subscriptionBreakpoints = {
+    100: {
+        slidesPerView: 1
+    },
+    576: {
+        slidesPerView: 2
+    },
+    768: {
+        slidesPerView: 3
+    }
+}
+
+let subscriptionSwiperOne = new Swiper(".subscription__cards--one .subscription__swiper", { // SUBSCRIPTION
     slidesPerView: 3,
     spaceBetween: 28,
     grabCursor: true,
 
     pagination: {
-        el: ".subscription__cards .swiper-pagination",
+        el: ".subscription__cards--one .swiper-pagination",
         clickable: true,
     },
-    // navigation: {
-    //     nextEl: ".subscription__cards .swiper-button-next",
-    //     prevEl: ".subscription__cards .swiper-button-prev",
-    // },
-    breakpoints: {
-        // when window width is >= 100px
-        100: {
-            slidesPerView: 1
-        },
-        // when window width is >= 576px
-        576: {
-            slidesPerView: 2
-        },
-        // when window width is >= 768px
-        768: {
-            slidesPerView: 3
-        }
-    }
+    breakpoints: subscriptionBreakpoints
+});
+
+let subscriptionSwiperTwo = new Swiper(".subscription__cards--two .subscription__swiper", { // SUBSCRIPTION
+    slidesPerView: 3,
+    spaceBetween: 28,
+    grabCursor: true,
+
+    pagination: {
+        el: ".subscription__cards--two .swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: subscriptionBreakpoints
 });
 
 // -------- Меняем блок карточек при изменении региона в подписке (продукт)
@@ -179,7 +186,8 @@ let subscribeAgreeCheckbox = document.querySelector(".subscription__accept .c-ch
 let notifyData = document.querySelector(".notifyData");
 let notifyDataContent = {
     label: notifyData.dataset.label || "Вы не приняли договор оферты",
-    text: notifyData.dataset.text || "Ознакомьтесь с договором оферты и примите его пожалуйста."
+    text: notifyData.dataset.text || "Ознакомьтесь с договором оферты и примите его пожалуйста.",
+    img: notifyData.dataset.img || "./img/notify/notify_error.svg"
 }
 
 let notifier = new AWN({
@@ -188,8 +196,7 @@ let notifier = new AWN({
     },
     icons: {
         prefix: "<img src='",
-        success: "./img/notify/notify_success.svg",
-        warning: "./img/notify/notify_error.svg",
+        warning: notifyDataContent.img,
         suffix: "'/>"
     }
 });

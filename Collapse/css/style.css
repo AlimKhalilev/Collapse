@@ -7838,7 +7838,7 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   margin-bottom: 2rem;
 }
 
-.gallery__video iframe {
+.gallery__frame {
   position: absolute;
   top: 0;
   left: 0;
