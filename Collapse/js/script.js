@@ -1881,24 +1881,6 @@ subscribeRadios.forEach(subscribeRadio => {
 
 // -----------------------------------------------------------------------------
 
-// -------- Оживляем чекбокс agree в секции карточек подписки ------------------
-
-let subscribeCardsBtns = document.querySelectorAll(".subscription__cards .baseCard__btn .btn");
-let subscribeAgreeCheckbox = document.querySelectorAll(".subscription__accept .c-checkbox__input");
-
-subscribeAgreeCheckbox.forEach(checkboxAgree => {
-    checkboxAgree.addEventListener("change", () => {
-        if (checkboxAgree.checked) {
-            subscribeCardsBtns.forEach(item => item.removeAttribute("disabled"));
-        }
-        else {
-            subscribeCardsBtns.forEach(item => item.setAttribute("disabled", ""));
-        }
-    });
-});
-
-// -----------------------------------------------------------------------------
-
 // ---------------------- ПЕРЕКЛЮЧАТЕЛЬ ТОВАРОВ В МОДАЛКЕ ----------------------
 
 function updateProductModalInfo(radio) { // функция переключения данных при изменении radio в футере модалки
@@ -1919,7 +1901,6 @@ let modalGameBuyRadio = document.querySelectorAll(".modal__gameRegion .daySelect
 let modalPricingCost = document.querySelector(".modal__footer .modal__cost");
 let modalPricingDuration = document.querySelector(".modal__footer .modal__duration");
 let modalBuyLink = document.querySelector(".modal__footer .modal__buySub");
-
 let modalOfferCheckbox = document.querySelector(".modal__acceptOffer .c-checkbox__input");
 
 modalGameContents.forEach((slide, slideID) => {
@@ -1947,15 +1928,6 @@ modalGameBuyRadio.forEach((radio, id) => {
     });
 });
 
-modalOfferCheckbox.addEventListener("change", () => { // переключатель политики конфиденциальности
-    if (modalOfferCheckbox.checked) {
-        modalBuyLink.removeAttribute("disabled");
-    }
-    else {
-        modalBuyLink.setAttribute("disabled", "");
-    }
-});
-
 // ---------------------- Переключаем слайд товара в модалке -------------------
 
 const modalGamesSwiper = new Swiper('.modal__gameRegion .swiper', {
@@ -1973,6 +1945,50 @@ modalGamesContentSelect.forEach((game, id) => {
         if (contentBaseRadio !== null) {
             contentBaseRadio.setAttribute("checked", ""); // выбираем его
             updateProductModalInfo(contentBaseRadio); // переключаем инфо в контенте футера модалки
+        }
+    });
+});
+
+// -----------------------------------------------------------------------------
+
+// ----------------------------- NOTIFY ----------------------------------------
+// -------- Оживляем чекбокс agree в секции карточек подписки ------------------
+
+let subscribeCardsBtns = document.querySelectorAll(".subscription__cards .baseCard__btn .btn");
+let subscribeAgreeCheckbox = document.querySelector(".subscription__accept .c-checkbox__input");
+
+let notifyData = document.querySelector(".notifyData");
+let notifyDataContent = {
+    label: notifyData.dataset.label || "Вы не приняли договор оферты",
+    text: notifyData.dataset.text || "Ознакомьтесь с договором оферты и примите его пожалуйста."
+}
+
+let notifier = new AWN({
+    labels: {
+        warning: notifyDataContent.label
+    },
+    icons: {
+        prefix: "<img src='",
+        success: "./img/notify/notify_success.svg",
+        warning: "./img/notify/notify_error.svg",
+        suffix: "'/>"
+    }
+});
+
+modalBuyLink.addEventListener("click", (e) => {
+    if (!modalOfferCheckbox.checked) {
+        e.preventDefault();
+        notifier.warning(notifyDataContent.text);
+    }
+});
+
+subscribeCardsBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        if (subscribeAgreeCheckbox !== null) {
+            if (!subscribeAgreeCheckbox.checked) {
+                e.preventDefault();
+                notifier.warning(notifyDataContent.text);
+            }
         }
     });
 });

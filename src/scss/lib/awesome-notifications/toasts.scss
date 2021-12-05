@@ -1,0 +1,190 @@
+#awn-toast-container {
+  position: fixed;
+  z-index: $awn-container-z-index;
+  bottom: $awn-container-padding;
+  right: $awn-container-padding;
+  box-sizing: border-box;
+
+  &.awn-top-left,
+  &.awn-top-right {
+    top: $awn-container-padding;
+    bottom: auto;
+
+    .awn-toast:first-child {
+      margin-top: $awn-toast-margin;
+    }
+  }
+
+  &.awn-top-left,
+  &.awn-bottom-left {
+    left: $awn-container-padding;
+    right: auto;
+
+    .awn-toast {
+      right: 100%;
+      animation-name: $awn-toast-left-show-animation;
+
+      &.awn-hiding {
+        right: 0;
+      }
+    }
+  }
+
+  &.awn-top-right,
+  &.awn-bottom-right {
+    .awn-toast {
+      left: 100%;
+      animation-name: $awn-toast-right-show-animation;
+
+      &.awn-hiding {
+        left: 0;
+      }
+    }
+  }
+}
+
+.awn-toast {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  width: 22.5rem;
+  background-color: $color_baseCard__bg;
+  margin-top: $awn-toast-margin;
+  border-radius: $awn-toast-border-radius;
+  color: $awn-primary-color;
+  font-size: $awn-toast-font-size;
+  animation-timing-function: $awn-toast-animation-timing;
+  animation-fill-mode: both;
+
+  @media ($media_sm) {
+    width: 85vw;
+  }
+
+  &-content {
+    color: $color_text_secondary;
+    font-weight: 500;
+    font-size: 0.8125rem;
+  }
+
+  &-label {
+    display: block;
+    color: $awn-primary-color;
+    font-size: 0.875rem;
+  }
+
+  &-icon {
+    position: absolute;
+    left: $awn-toast-padding;
+    top: $awn-progress-bar-height;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .fa {
+      font-size: $awn-toast-icon-size;
+      color: $awn-primary-color;
+    }
+  }
+
+  &-wrapper {
+    padding: 1.5rem;
+    padding-left: 4rem;
+    border-radius: 0.75rem;
+
+    @media ($media_sm) {
+      padding: 1rem;
+      padding-left: 3rem;
+    }
+  }
+
+  &-progress-bar {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $awn-progress-bar-height;
+
+    &:after {
+      content: " ";
+      background: $awn-primary-color;
+      position: absolute;
+      width: 100%;
+      right: 100%;
+      top: 0;
+      height: $awn-progress-bar-height;
+      animation-name: awn-bar;
+      animation-duration: inherit;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+    }
+  }
+
+  &.awn-toast-progress-bar-paused .awn-toast-progress-bar:after {
+    animation-play-state: paused;
+  }
+
+  &.awn-hiding {
+    animation-name: $awn-toast-hide-animation !important;
+  }
+
+  &.awn-toast-success {
+
+    b {
+      color: $color_notify_success;
+    }
+
+    .awn-toast-progress-bar:after {
+      background: $awn-success-color;
+    }
+  }
+
+  &.awn-toast-warning {
+
+    b {
+      color: $color_detected;
+    }
+
+    .awn-toast-progress-bar:after {
+      background: $awn-warning-color;
+    }
+  }
+
+  &.awn-toast-info {
+    background: $awn-info-background;
+    color: $awn-info-color;
+
+    .awn-toast-wrapper {
+      border-color: $awn-info-border-color;
+    }
+
+    b,
+    .fa {
+      color: $awn-info-color;
+    }
+
+    .awn-toast-progress-bar:after {
+      background: $awn-info-color;
+    }
+  }
+
+  &.awn-toast-alert {
+    background: $awn-alert-background;
+    color: $awn-alert-color;
+
+    .awn-toast-wrapper {
+      border-color: $awn-alert-border-color;
+    }
+
+    b,
+    .fa {
+      color: $awn-alert-color;
+    }
+
+    .awn-toast-progress-bar:after {
+      background: $awn-alert-color;
+    }
+  }
+}
