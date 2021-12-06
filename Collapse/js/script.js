@@ -290,6 +290,9 @@ class GUI {
         handle.addEventListener("change", () => {
             if (this.espState && this.distanceState) {
                 this.changeHandleState(handle.checked, handleName, guiContainer);
+                if (handleName === "inventory") {
+
+                }
             }
         });
     }
@@ -298,6 +301,12 @@ class GUI {
         guiContainer.querySelectorAll("[data-handle]").forEach(handle => {
             let handleState = (state ? handle.checked : false);
             this.changeHandleState(handleState, handle.dataset.handle, guiContainer)
+        });
+    }
+
+    static enableWeaponToggler(handleInventory, handlePlayerWeapon) {
+        handleInventory.addEventListener("change", () => {
+            handlePlayerWeapon.classList.toggle("success", handleInventory.checked);
         });
     }
 
@@ -326,6 +335,11 @@ class GUI {
             guiContainer.querySelectorAll("[data-handle]").forEach(handle => {
                 this.initBasicToggler(handle, handle.dataset.handle, guiContainer);
             });
+
+            let handleInventory = guiContainer.querySelector("[data-handle='inventory']");
+            let handlePlayerWeapon = guiContainer.querySelector(".guiPlayer__weapon");
+
+            this.enableWeaponToggler(handleInventory, handlePlayerWeapon);
         });
     }
 }

@@ -968,6 +968,10 @@
         &.active {
             opacity: 1;
         }
+
+        &.success {
+            color: $color_notify_success;
+        }
     }
 
     // .guiPlayer__inventory

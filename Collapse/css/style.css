@@ -5208,6 +5208,10 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
+.guiPlayer__weapon.success {
+  color: #91C750;
+}
+
 .guiPlayer__inventory {
   -webkit-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
