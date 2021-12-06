@@ -52,7 +52,12 @@ function getScrollBarWidth() { // получаем ширину скролла
     scrollBlock.classList.add("scroll-block-dummy");
     g_body.appendChild(scrollBlock);
 
-    const scrollBarWidth = scrollBlock.offsetWidth - scrollBlock.clientWidth;
+    let scrollBarWidth = scrollBlock.offsetWidth - scrollBlock.clientWidth;
+
+    if (window.screen.width < 576) {
+        scrollBarWidth = 0;
+    }
+
     g_body.removeChild(scrollBlock);
     return (height > vh ? scrollBarWidth : 0); // если общая высота страницы больше видимой высоты, не добавляем ширину скролла
 }
@@ -2001,3 +2006,11 @@ subscribeCardsBtns.forEach(btn => {
 });
 
 // -----------------------------------------------------------------------------
+
+let modalImg = document.querySelector(".modal--img img");
+document.querySelectorAll(".gallery__image").forEach(img => {
+    img.addEventListener("click", () => {
+        let src = img.querySelector(".imgMax").getAttribute("src");
+        modalImg.setAttribute("src", src);
+    });
+});

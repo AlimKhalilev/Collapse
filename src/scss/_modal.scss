@@ -12,6 +12,14 @@
     background-color: $color_baseCard__bg_hover;
     width: 27rem;
 
+    &--img {
+        width: 50rem;
+
+        @media ($media_xs) {
+            width: 90%;
+        }
+    }
+
     &.visible {
         top: 50%;
     }
@@ -191,6 +199,16 @@
         
         .acceptOffer {
             justify-content: center;
+        }
+    }
+
+    // .modal__img
+
+    &__img {
+        display: flex;
+
+        img {
+            width: 100%;
         }
     }
 

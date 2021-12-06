@@ -220,3 +220,11 @@ subscribeCardsBtns.forEach(btn => {
 });
 
 // -----------------------------------------------------------------------------
+
+let modalImg = document.querySelector(".modal--img img");
+document.querySelectorAll(".gallery__image").forEach(img => {
+    img.addEventListener("click", () => {
+        let src = img.querySelector(".imgMax").getAttribute("src");
+        modalImg.setAttribute("src", src);
+    });
+});
