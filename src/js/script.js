@@ -221,10 +221,13 @@ subscribeCardsBtns.forEach(btn => {
 
 // -----------------------------------------------------------------------------
 
-let modalImg = document.querySelector(".modal--img img");
-document.querySelectorAll(".gallery__image").forEach(img => {
+let modalBaseId = 0;
+let modalImg = document.querySelectorAll(".modal--img img");
+
+document.querySelectorAll(".gallery__image").forEach((img, id) => {
     img.addEventListener("click", () => {
-        let src = img.querySelector(".imgMax").getAttribute("src");
-        modalImg.setAttribute("src", src);
+        modalImg[modalBaseId].classList.remove("visible");
+        modalImg[id].classList.add("visible");
+        modalBaseId = id;
     });
 });

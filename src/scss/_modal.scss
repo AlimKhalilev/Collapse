@@ -18,6 +18,14 @@
         @media ($media_xs) {
             width: 90%;
         }
+
+        img {
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+        }
     }
 
     &.visible {

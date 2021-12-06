@@ -958,6 +958,18 @@
         }
     }
 
+    // .gallery__icon
+
+    &__icon {
+        position: absolute;
+        background-image: var(--iconPath);
+        background-size: cover;
+        width: 1.625rem;
+        height: 1.625rem;
+        left: 1.25rem;
+        top: 1.25rem;
+    }
+
     // .gallery__image
 
     &__image {
@@ -966,23 +978,16 @@
         display: flex;
         @include cursorPointer();
 
+        img {
+            width: 100%;
+        }
+
         &:not(:last-child) {
             margin-right: 2rem;
 
             @media ($media_sm) {
                 margin: 0 0 1rem 0;
             }
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-image: url("../img/img-icon.svg");
-            background-size: cover;
-            width: 1.625rem;
-            height: 1.625rem;
-            left: 1.25rem;
-            top: 1.25rem;
         }
 
         &::after {
