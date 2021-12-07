@@ -20,9 +20,8 @@ class GUI {
 
         handle.addEventListener("change", () => {
             if (this.espState && this.distanceState) {
-                this.changeHandleState(handle.checked, handleName, guiContainer);
-                if (handleName === "inventory") {
-
+                if (handleName !== "weapon") {
+                    this.changeHandleState(handle.checked, handleName, guiContainer);
                 }
             }
         });
@@ -35,10 +34,25 @@ class GUI {
         });
     }
 
-    static enableWeaponToggler(handleInventory, handlePlayerWeapon) {
+    static enableWeaponToggler(handleInventory, handleWeapon, handlePlayerWeapon) { // отдельная логика для weapon и inventory
         handleInventory.addEventListener("change", () => {
             handlePlayerWeapon.classList.toggle("success", handleInventory.checked);
+
+            if (!handleWeapon.checked && !handleInventory.checked) { // если оба выключены тумблера
+                handlePlayerWeapon.classList.remove("active"); // вырубаем weapon gui (автоматически вырублен будет и inventory)
+            }
+            if (handleInventory.checked) { // если включаем inventory, то в любом случае включаем weapon gui
+                handlePlayerWeapon.classList.add("active");
+            }
         });
+
+        handleWeapon.addEventListener("change", () => {
+            if (!handleInventory.checked) { // если тумблер inventory вырублен (только тогда взаимодействуем с gui weapon)
+                handlePlayerWeapon.classList.toggle("active", handleWeapon.checked); // врубаем только тогда, когда weapon чекнут
+            }
+
+            //handlePlayerWeapon.classList.toggle("active", !handleInventory.checked);
+        })
     }
 
     static initEvents() {
@@ -67,10 +81,13 @@ class GUI {
                 this.initBasicToggler(handle, handle.dataset.handle, guiContainer);
             });
 
+            // работаем с отдельным функционалом inventory и weapon
+
             let handleInventory = guiContainer.querySelector("[data-handle='inventory']");
+            let handleWeapon = guiContainer.querySelector("[data-handle='weapon']");
             let handlePlayerWeapon = guiContainer.querySelector(".guiPlayer__weapon");
 
-            this.enableWeaponToggler(handleInventory, handlePlayerWeapon);
+            this.enableWeaponToggler(handleInventory, handleWeapon, handlePlayerWeapon);
         });
     }
 }
