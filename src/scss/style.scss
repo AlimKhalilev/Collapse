@@ -871,9 +871,11 @@
         .swiper-pagination {
             position: static;
             margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
 
             &-bullet {
-                display: flex-block;
+                display: block;
                 width: 0.5rem;
                 height: 0.5rem;
                 border-radius: 50%;

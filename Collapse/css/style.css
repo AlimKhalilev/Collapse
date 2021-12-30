@@ -7827,10 +7827,16 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 .subscription__cards .swiper-pagination {
   position: static;
   margin-top: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .subscription__cards .swiper-pagination-bullet {
-  display: flex-block;
+  display: block;
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
