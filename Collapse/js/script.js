@@ -1940,6 +1940,7 @@ function updateProductModalInfo(radio) { // функция переключен�
 
 let modalGameContents = document.querySelectorAll(".modal__gameRegion .swiper-slide");
 let modalGameBuyRadio = document.querySelectorAll(".modal__gameRegion .daySelector__radio");
+let acceptOfferCheckboxes = document.querySelectorAll(".acceptOffer .c-checkbox__input");
 
 let modalPricingCost = document.querySelector(".modal__footer .modal__cost");
 let modalPricingDuration = document.querySelector(".modal__footer .modal__duration");
@@ -1950,9 +1951,13 @@ modalGameContents.forEach((slide, slideID) => {
     let radioSelectors = slide.querySelectorAll(".regionSelector__radio");
     let contentGames = slide.querySelectorAll(".daySelector");
 
-    radioSelectors.forEach(radio => {
+    radioSelectors.forEach((radio, id) => {
         radio.addEventListener("change", () => {
-            //console.log(slideID);
+            let radioSelect = contentGames[id].querySelectorAll(".daySelector__radio")[0];
+            if (radioSelect !== null) {
+                radioSelect.checked = true;
+                updateProductModalInfo(radioSelect);
+            }
 
             contentGames.forEach(daySelector => {
                 daySelector.classList.toggle("daySelector--visible");
@@ -1981,14 +1986,18 @@ let modalGamesContentSelect = document.querySelectorAll(".modal__gameVersion .co
 
 modalGamesContentSelect.forEach((game, id) => {
     game.addEventListener("change", () => {
-        //console.log(id);
         modalGamesSwiper.slideTo(id, 0, true);
 
-        let contentBaseRadio = modalGameContents[id].querySelector(".daySelector__radio"); // получаем первое радио из списка текущей игры
-        if (contentBaseRadio !== null) {
-            contentBaseRadio.setAttribute("checked", ""); // выбираем его
-            updateProductModalInfo(contentBaseRadio); // переключаем инфо в контенте футера модалки
-        }
+        modalGameContents[id].querySelectorAll(".daySelector").forEach((item, id) => { // перебираем оба региона
+            if (item.classList.contains("daySelector--visible")) { // смотрим у кого активный класс (выбран регион RU или EU)
+                let contentBaseRadio = item.querySelector(".daySelector__radio"); // получаем первое радио из списка текущей игры
+                if (contentBaseRadio !== null) {
+                    contentBaseRadio.checked = true; // выбираем его
+                    updateProductModalInfo(contentBaseRadio); // переключаем инфо в контенте футера модалки
+                }
+            }
+        });
+
     });
 });
 
@@ -2035,6 +2044,15 @@ subscribeCardsBtns.forEach(btn => {
         }
     });
 });
+
+let acceptAgreeBtn = document.querySelector("#modal_offer .modal__footer .btn");
+if (acceptAgreeBtn !== null) {
+    acceptAgreeBtn.addEventListener("click", (e) => {
+        acceptOfferCheckboxes.forEach(checkbox => {
+            checkbox.checked = true;
+        })
+    });
+}
 
 // -----------------------------------------------------------------------------
 
