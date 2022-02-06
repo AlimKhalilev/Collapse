@@ -2055,6 +2055,7 @@ if (acceptAgreeBtn !== null) {
 }
 
 // -----------------------------------------------------------------------------
+// ВКЛЮЧАЕМ ГАЛЕРЕЮ
 
 let modalBaseId = 0;
 let modalImg = document.querySelectorAll(".modal--img img");
@@ -2064,5 +2065,28 @@ document.querySelectorAll(".gallery__image").forEach((img, id) => {
         modalImg[modalBaseId].classList.remove("visible");
         modalImg[id].classList.add("visible");
         modalBaseId = id;
+    });
+});
+
+// -------------------------------------------------------------------------------
+// Notification purple header (включение и выключение по ID из localStorage)
+
+let notification = document.querySelector(".notification");
+let header = document.querySelector(".header");
+if (notification !== null && header !== null) {
+    document.body.insertBefore(notification, header);
+
+    notificationStorageID = localStorage.getItem("notificationID");
+    if (notificationStorageID === null || Number(notification.dataset.id) > Number(localStorage.getItem("notificationID"))) { 
+        // если сторейдж пустой, или если текущий notificationID больше пред. закрытого
+        notification.classList.remove("hidden");
+    }
+}
+
+document.querySelectorAll(".notification__close").forEach(notification_close => {
+    let notification = document.querySelector(".notification");
+    notification_close.addEventListener("click", () => {
+        notification.classList.add("hidden");
+        localStorage.setItem("notificationID", notification.dataset.id);
     });
 });

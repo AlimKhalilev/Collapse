@@ -4056,6 +4056,7 @@ button.swiper-pagination-bullet {
 :root {
   --section_indent: 6rem;
   --header-min-height: 5.5rem;
+  --notification-height: 3rem;
 }
 
 html,
@@ -4166,6 +4167,10 @@ body::-webkit-scrollbar-thumb {
 
 .section--beforeFooter {
   margin-bottom: var(--section_indent);
+}
+
+.section--notification {
+  margin-top: 0;
 }
 
 .blockTitle {
@@ -5940,6 +5945,72 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   text-align: center;
 }
 
+.notification {
+  position: absolute;
+  top: calc(-1 * var(--notification-height));
+  left: 0;
+  width: 100%;
+  background-color: #9562EE;
+  color: #EEEDF6;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.notification:not(.hidden) {
+  top: 0;
+}
+
+.notification:not(.hidden) + .header {
+  top: var(--notification-height);
+}
+
+.notification:not(.hidden) + .header + .productMenu {
+  top: calc(var(--header-min-height) + var(--notification-height));
+}
+
+.notification__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: var(--notification-height);
+}
+
+.notification__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notification__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1rem;
+}
+
+.notification__text {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.notification__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 0.5rem;
+}
+
 .c-checkbox {
   position: relative;
   display: -webkit-inline-box;
@@ -7111,6 +7182,9 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   top: 0;
   z-index: 11;
   margin: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .header__inner {
@@ -7971,6 +8045,10 @@ ul li.menu-item > .menu-image-title-below.menu-link {
     cursor: pointer;
   }
 
+  .notification__close {
+    cursor: pointer;
+  }
+
   .c-checkbox {
     cursor: pointer;
   }
@@ -8224,6 +8302,10 @@ ul li.menu-item > .menu-image-title-below.menu-link {
 
   .regionSelector__item:not(:last-child) {
     margin: 0 0 0.5rem 0;
+  }
+
+  .notification__text {
+    font-size: 12px;
   }
 
   .c-field {

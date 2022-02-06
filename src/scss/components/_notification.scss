@@ -1,0 +1,65 @@
+.notification {
+    position: absolute;
+    top: calc(-1 * var(--notification-height));
+    left: 0;
+    width: 100%;
+
+    background-color: $color_purple;
+    color: $color_white;
+    transition: 0.3s ease-in-out;
+
+    &:not(.hidden) {
+        top: 0;
+
+        +.header {
+            top: var(--notification-height);
+    
+            &+.productMenu {
+                top: calc(var(--header-min-height) + var(--notification-height));
+            }
+        }
+    }
+
+    // .notification__inner
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: var(--notification-height);
+    }
+
+    // .notification__content
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    // .notification__icon
+
+    &__icon {
+        display: flex;
+        margin-right: 1rem;
+    }
+
+    // .notification__text
+
+    &__text {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.4;
+
+        @media ($media_sm) {
+            font-size: 12px;
+        }
+    }
+
+    // .notification__close
+
+    &__close {
+        display: flex;
+        margin-left: 0.5rem;
+        @include cursorPointer();
+    }
+}

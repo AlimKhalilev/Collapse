@@ -5,6 +5,7 @@
 :root {
     --section_indent: 6rem;
     --header-min-height: 5.5rem;
+    --notification-height: 3rem;
 
     @media ($media_sm) {
         --section_indent: 3.75rem;
@@ -120,6 +121,10 @@ html, body {
 
     &--beforeFooter {
         margin-bottom: var(--section_indent);
+    }
+
+    &--notification {
+        margin-top: 0;
     }
 }
 
