@@ -126,6 +126,10 @@ html, body {
     &--notification {
         margin-top: 0;
     }
+
+    &--notFound {
+        margin-top: calc(-1 * calc(var(--section_indent) + var(--header-min-height)));
+    }
 }
 
 .blockTitle {

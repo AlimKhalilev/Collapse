@@ -2072,10 +2072,7 @@ document.querySelectorAll(".gallery__image").forEach((img, id) => {
 // Notification purple header (включение и выключение по ID из localStorage)
 
 let notification = document.querySelector(".notification");
-let header = document.querySelector(".header");
-if (notification !== null && header !== null) {
-    document.body.insertBefore(notification, header);
-
+if (notification !== null) {
     notificationStorageID = localStorage.getItem("notificationID");
     if (notificationStorageID === null || Number(notification.dataset.id) > Number(localStorage.getItem("notificationID"))) { 
         // если сторейдж пустой, или если текущий notificationID больше пред. закрытого

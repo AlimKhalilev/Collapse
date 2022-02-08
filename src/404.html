@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+
+		@@include('_head.html', {
+			"title": "Collapse - 404 Not Found"
+		})
+
+	</head>
+	<body>
+
+		@@include('_notification.html')
+		
+        @@include("_header.html", {
+            "main": "menu__item--active"
+        })
+
+        <section class="section section--notFound notFound" style="--bg: url(../img/error_bg.png); --bg_mob: url(../img/error_bg_mob.png);">
+            <div class="section__inner">
+                <div class="notFound__content">
+                    <img class="notFound__img" src="./img/404.svg" alt="404 не найдено">
+                    <h2 class="notFound__text">We don't seem to be able to find what you are looking for. You can return to the main page</h2>
+                    <a class="notFound__btn btn btn--primary" href="./">Go to home</a>
+                </div>
+            </div>
+        </section>
+
+		@@include("_footer.html")
+
+	</body>
+</html>

@@ -1012,3 +1012,58 @@
         }
     }
 }
+
+.notFound {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    background-image: var(--bg);
+    background-size: cover;
+
+    @media ($media_sm) {
+        background-image: var(--bg_mob);
+    }
+
+    // .notFound__content
+
+    &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 35rem;
+    }
+
+    // .notFound__img
+
+    &__img {
+        max-width: 26rem;
+
+        @media ($media_sm) {
+            max-width: 80%;
+        }
+    }
+
+    // .notFound__text
+
+    &__text {
+        font-size: 1.125rem;
+        color: $color_text_secondary;
+        line-height: 1.65;
+        font-weight: 400;
+        margin-bottom: 2rem;
+
+        @media ($media_sm) {
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            line-height: 1.7;
+        }
+    }
+
+    // .notFound__btn
+
+    &__btn {
+        
+    }
+}
