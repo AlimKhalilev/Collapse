@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru" class="bannedPage">
+	<head>
+
+		@@include('_head.html', {
+			"title": "Collapse - Home Page"
+		})
+
+	</head>
+	<body>
+        <main class="section section--notification banned notFound" style="--bg: url(../img/error_bg.png); --bg_mob: url(../img/error_bg_mob.png);">
+            <div class="section__inner">
+                <div class="banned__content notFound__content">
+                    <img src="./img/goose.png" alt="Картинка гуся">
+                    <h1 class="banned__title">Banned</h1>
+                    <h3 class="banned__reason">Reason: Faggot</h3>
+                    <span class="banned__text notFound__text">You can ask for an amnesty or find out the details of the reason for your blocking</span>
+                    <div class="banned__buttons">
+                        <a class="btn btn--primary" href="./">Discord support</a>
+                        <a class="btn btn--vk" href="./">VK support</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            // ------------------------------------------------------------------------------
+            // Размер 100vh вне зависимости от андроид шторки на мобилке
+
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+        </script>
+	</body>
+</html>

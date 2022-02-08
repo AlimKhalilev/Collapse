@@ -64,6 +64,14 @@
         }
     }
 
+    &--vk {
+        background-color: $color_vk;
+
+        &:hover, &:focus {
+            background-color: $color_vk_hover;
+        }
+    }
+
     &--warning {
         background-color: $color_warning;
 
