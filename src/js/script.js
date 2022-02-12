@@ -270,3 +270,28 @@ document.querySelectorAll(".notification__close").forEach(notification_close => 
         localStorage.setItem("notificationID", notification.dataset.id);
     });
 });
+
+// -------------------------------------------------------------------------------
+// Rocket animation show before change language
+
+document.querySelectorAll(".languages a").forEach(link => {
+    let href = link.getAttribute("href");
+    overlayAnimation = document.querySelector(".overlay--animation");
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (overlayAnimation !== null) {
+            overlayAnimation.classList.add("visible");
+            setTimeout(() => {
+                overlayAnimation.classList.add("addCircle");
+            }, 2500);
+
+            setTimeout(() => {
+                overlayAnimation.classList.add("startAnim");
+            }, 2550);
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 3200);
+        }
+    });
+});

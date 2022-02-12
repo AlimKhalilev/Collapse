@@ -304,24 +304,32 @@ class GUI {
     }
 
     static enableWeaponToggler(handleInventory, handleWeapon, handlePlayerWeapon) { // отдельная логика для weapon и inventory
-        handleInventory.addEventListener("change", () => {
-            handlePlayerWeapon.classList.toggle("success", handleInventory.checked);
-
-            if (!handleWeapon.checked && !handleInventory.checked) { // если оба выключены тумблера
-                handlePlayerWeapon.classList.remove("active"); // вырубаем weapon gui (автоматически вырублен будет и inventory)
-            }
-            if (handleInventory.checked) { // если включаем inventory, то в любом случае включаем weapon gui
+        if (handleInventory) { // если есть переключатель Inventory
+            if (handleInventory.checked) { // если при инициализации есть handleWeapon, и переключатель Inventory выделен 
                 handlePlayerWeapon.classList.add("active");
-            }
-        });
-
-        handleWeapon.addEventListener("change", () => {
-            if (!handleInventory.checked) { // если тумблер inventory вырублен (только тогда взаимодействуем с gui weapon)
-                handlePlayerWeapon.classList.toggle("active", handleWeapon.checked); // врубаем только тогда, когда weapon чекнут
+                handlePlayerWeapon.classList.add("success");
             }
 
-            //handlePlayerWeapon.classList.toggle("active", !handleInventory.checked);
-        })
+            handleInventory.addEventListener("change", () => {
+                handlePlayerWeapon.classList.toggle("success", handleInventory.checked);
+    
+                if ((!handleWeapon) || (!handleWeapon.checked && !handleInventory.checked)) { // если нет тумблера weapon, или если оба тумблера выключены
+                    handlePlayerWeapon.classList.remove("active"); // вырубаем weapon gui (автоматически вырублен будет и inventory)
+                }
+                if (handleInventory.checked) { // если включаем inventory, то в любом случае включаем weapon gui
+                    handlePlayerWeapon.classList.add("active");
+                }
+            });
+        }
+
+        if (handleWeapon) { // если есть переключатель Weapon
+            handleWeapon.addEventListener("change", () => {
+                if (!handleInventory || !handleInventory.checked) { // если нет тумблера inventory, или если тумблер inventory вырублен (только тогда взаимодействуем с gui weapon)
+                    handlePlayerWeapon.classList.toggle("active", handleWeapon.checked); // врубаем только тогда, когда weapon чекнут
+                }
+            });
+        }
+
     }
 
     static initEvents() {
@@ -2085,5 +2093,30 @@ document.querySelectorAll(".notification__close").forEach(notification_close => 
     notification_close.addEventListener("click", () => {
         notification.classList.add("hidden");
         localStorage.setItem("notificationID", notification.dataset.id);
+    });
+});
+
+// -------------------------------------------------------------------------------
+// Rocket animation show before change language
+
+document.querySelectorAll(".languages a").forEach(link => {
+    let href = link.getAttribute("href");
+    overlayAnimation = document.querySelector(".overlay--animation");
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (overlayAnimation !== null) {
+            overlayAnimation.classList.add("visible");
+            setTimeout(() => {
+                overlayAnimation.classList.add("addCircle");
+            }, 2500);
+
+            setTimeout(() => {
+                overlayAnimation.classList.add("startAnim");
+            }, 2550);
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 3200);
+        }
     });
 });

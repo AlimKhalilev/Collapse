@@ -4103,7 +4103,7 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #1a1e29;
+  background-color: #1A1F29;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 0.3s ease-in-out;
@@ -4122,6 +4122,57 @@ body::-webkit-scrollbar-thumb {
 .overlay.visible {
   visibility: visible;
   opacity: 0.78;
+}
+
+.overlay--animation {
+  z-index: 20;
+  -webkit-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.overlay--animation.visible {
+  opacity: 1;
+}
+
+.overlay--animation.addCircle::after {
+  opacity: 0.8;
+}
+
+.overlay--animation.startAnim::after {
+  -webkit-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.overlay--animation.startAnim .advantageRocket__icon {
+  opacity: 0;
+}
+
+.overlay--animation .advantageRocket__icon {
+  width: 100px;
+  -webkit-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.overlay--animation::after {
+  content: "";
+  position: absolute;
+  width: 80vw;
+  height: 80vw;
+  background-color: #9562EE;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
 }
 
 .visually-hidden {
@@ -8313,6 +8364,11 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   :root {
     --section_indent: 3.75rem;
     --header-min-height: 4.125rem;
+  }
+
+  .overlay--animation::after {
+    width: 70vh;
+    height: 70vh;
   }
 
   .blockTitle {
