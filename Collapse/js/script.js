@@ -1893,7 +1893,7 @@ const subscriptionBreakpoints = {
     }
 }
 
-let subscriptionSwiperOne = new Swiper(".subscription__cards--one .subscription__swiper", { // SUBSCRIPTION
+let subscriptionSwiperOne = new Swiper(".subscription__cards--one .subscription__swiper", { // SUBSCRIPTION ONE
     slidesPerView: 3,
     spaceBetween: 28,
     grabCursor: true,
@@ -1905,7 +1905,7 @@ let subscriptionSwiperOne = new Swiper(".subscription__cards--one .subscription_
     breakpoints: subscriptionBreakpoints
 });
 
-let subscriptionSwiperTwo = new Swiper(".subscription__cards--two .subscription__swiper", { // SUBSCRIPTION
+let subscriptionSwiperTwo = new Swiper(".subscription__cards--two .subscription__swiper", { // SUBSCRIPTION TWO
     slidesPerView: 3,
     spaceBetween: 28,
     grabCursor: true,
@@ -2061,20 +2061,6 @@ if (acceptAgreeBtn !== null) {
         })
     });
 }
-
-// -----------------------------------------------------------------------------
-// ВКЛЮЧАЕМ ГАЛЕРЕЮ
-
-let modalBaseId = 0;
-let modalImg = document.querySelectorAll(".modal--img img");
-
-document.querySelectorAll(".gallery__image").forEach((img, id) => {
-    img.addEventListener("click", () => {
-        modalImg[modalBaseId].classList.remove("visible");
-        modalImg[id].classList.add("visible");
-        modalBaseId = id;
-    });
-});
 
 // -------------------------------------------------------------------------------
 // Notification purple header (включение и выключение по ID из localStorage)
