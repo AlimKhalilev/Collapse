@@ -1,14 +1,18 @@
 class Modal {
     static overlay = document.querySelector(".overlay--modal");
     static header = document.querySelector(".header");
-    static paddingElems = [g_body, this.header];
+    static notification = document.querySelector(".notification");
+
+    static paddingElems = [g_body, this.header, this.notification];
     static isModalVisible = false; // открыто ли какое-либо модальное окно
 
     static toggleOverlay() {
         this.overlay.classList.toggle("visible");
         g_body.classList.toggle("hideScroll");
         this.paddingElems.forEach(elem => { // все элементы, куда нужно добавить padding - добавляем
-            elem.style.paddingRight = (elem.style.paddingRight === "" ? `${g_scrollBarWidth}px` : "");
+            if (elem !== null) {
+                elem.style.paddingRight = (elem.style.paddingRight === "" ? `${g_scrollBarWidth}px` : "");
+            }
         });
     }
 

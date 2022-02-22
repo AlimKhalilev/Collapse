@@ -228,14 +228,15 @@ subscribeCardsBtns.forEach(btn => {
     });
 });
 
-let acceptAgreeBtn = document.querySelector("#modal_offer .modal__footer .btn");
-if (acceptAgreeBtn !== null) {
-    acceptAgreeBtn.addEventListener("click", (e) => {
+// Проставить везде галочку Accept политику конфиденциальности
+let acceptAgreeBtn = document.querySelectorAll(".modal--offer .modal__footer .btn");
+acceptAgreeBtn.forEach(acceptBtn => {
+    acceptBtn.addEventListener("click", () => {
         acceptOfferCheckboxes.forEach(checkbox => {
             checkbox.checked = true;
         })
     });
-}
+});
 
 // -------------------------------------------------------------------------------
 // Notification purple header (включение и выключение по ID из localStorage)

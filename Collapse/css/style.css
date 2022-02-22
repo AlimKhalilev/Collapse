@@ -6016,9 +6016,6 @@ ul li.menu-item > .menu-image-title-below.menu-link {
   width: 100%;
   background-color: #9562EE;
   color: #EEEDF6;
-  -webkit-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 
 .notification:not(.hidden) {
@@ -8123,9 +8120,6 @@ body.compensate-for-scrollbar {
   top: 0;
   z-index: 11;
   margin: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 
 .header__inner {

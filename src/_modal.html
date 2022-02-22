@@ -520,7 +520,7 @@
                         </div>
 
                         <div class="acceptOffer__link">
-                            <button data-modal="modal_offer">offer agreement</button>
+                            <button data-modal="modal_offer_buysub">offer agreement</button>
                         </div>
                     </div>
                 </div>
@@ -535,7 +535,7 @@
     </div>
 </div>
 
-<div class="modal" id="modal_offer">
+<div class="modal modal--offer" id="modal_offer">
     <div class="modal__container">
         <div class="modal__content">
             <div class="modal__header modal__spaceBorder">
@@ -558,11 +558,26 @@
     </div>
 </div>
 
-<div class="modal modal--img" id="modal_img">
-    <div class="modal__img">
-        <img class="imgMax" src="./img/gallery_img_1.png" alt="Картинка галереи">
-        <img class="imgMax" src="./img/gallery_img_2.png" alt="Картинка галереи">
-        <img class="imgMax" src="./img/gallery_img_1.png" alt="Картинка галереи">
+<div class="modal modal--offer" id="modal_offer_buysub">
+    <div class="modal__container">
+        <div class="modal__content">
+            <div class="modal__header modal__spaceBorder">
+                <h2 class="modal__title">Offer Agreement</h2>
+                <img class="modal__close" src="./img/modal_close.svg" alt="Иконка закрытия модалки" data-closeModal>
+            </div>
+            <div class="modal__body customScroll">
+                <p class="modal__text">
+                    Пользовательское соглашение об использовании программного обеспечения конечными пользователями Это соглашение об использовании 
+                    программного обеспечения («Соглашение») заключено и исполняется: разработчиками программ сайта https://more-cheats.com и Вами, 
+                    физическим или юридическим лицом, выступающим в качестве конечного пользователя (далее просто «Пользователь»), и подтверждает 
+                    предоставленное Вам право на использование Программного обеспечения, определенного в статье 1 настоящего Соглашения. Экземпляр 
+                    Программного обеспечения, определенного в статье 1 настоящего Соглашения,
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal__footer modal__footer--full">
+        <button class="btn btn--primary" data-modal="modal_buysub">I accept</button>
     </div>
 </div>
 

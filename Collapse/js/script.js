@@ -74,14 +74,18 @@ function placeElemPositionY(elem, className) { // устанавливаем э�
 class Modal {
     static overlay = document.querySelector(".overlay--modal");
     static header = document.querySelector(".header");
-    static paddingElems = [g_body, this.header];
+    static notification = document.querySelector(".notification");
+
+    static paddingElems = [g_body, this.header, this.notification];
     static isModalVisible = false; // открыто ли какое-либо модальное окно
 
     static toggleOverlay() {
         this.overlay.classList.toggle("visible");
         g_body.classList.toggle("hideScroll");
         this.paddingElems.forEach(elem => { // все элементы, куда нужно добавить padding - добавляем
-            elem.style.paddingRight = (elem.style.paddingRight === "" ? `${g_scrollBarWidth}px` : "");
+            if (elem !== null) {
+                elem.style.paddingRight = (elem.style.paddingRight === "" ? `${g_scrollBarWidth}px` : "");
+            }
         });
     }
 
@@ -2053,14 +2057,15 @@ subscribeCardsBtns.forEach(btn => {
     });
 });
 
-let acceptAgreeBtn = document.querySelector("#modal_offer .modal__footer .btn");
-if (acceptAgreeBtn !== null) {
-    acceptAgreeBtn.addEventListener("click", (e) => {
+// Проставить везде галочку Accept политику конфиденциальности
+let acceptAgreeBtn = document.querySelectorAll(".modal--offer .modal__footer .btn");
+acceptAgreeBtn.forEach(acceptBtn => {
+    acceptBtn.addEventListener("click", () => {
         acceptOfferCheckboxes.forEach(checkbox => {
             checkbox.checked = true;
         })
     });
-}
+});
 
 // -------------------------------------------------------------------------------
 // Notification purple header (включение и выключение по ID из localStorage)

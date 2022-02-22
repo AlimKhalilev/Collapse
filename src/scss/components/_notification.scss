@@ -6,7 +6,6 @@
 
     background-color: $color_purple;
     color: $color_white;
-    transition: 0.3s ease-in-out;
 
     &:not(.hidden) {
         top: 0;
