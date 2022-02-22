@@ -1296,7 +1296,8 @@
     // .regionSelector__item
 
     &__item {
-        &:not(:last-child) {
+        &--first {
+            order: -1;
             margin-right: 0.625rem;
 
             @media ($media_sm) {

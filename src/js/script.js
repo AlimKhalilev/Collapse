@@ -121,6 +121,9 @@ function updateProductModalInfo(radio) { // функция переключен�
     modalBuyLink.setAttribute("href", needHref);
 }
 
+// radio элемент, который изначально чекнутый
+let modalGameBuyRadioInitial = document.querySelector(".modal__gameRegion .daySelector--visible .daySelector__radio");
+
 let modalGameContents = document.querySelectorAll(".modal__gameRegion .swiper-slide");
 let modalGameBuyRadio = document.querySelectorAll(".modal__gameRegion .daySelector__radio");
 let acceptOfferCheckboxes = document.querySelectorAll(".acceptOffer .c-checkbox__input");
@@ -149,11 +152,11 @@ modalGameContents.forEach((slide, slideID) => {
     });
 });
 
-modalGameBuyRadio.forEach((radio, id) => {
-    if (id === 0) { // стартовая инициализация данных в футере модалки
-        updateProductModalInfo(radio);
-    }
+if (modalGameBuyRadioInitial !== null) { // стартовая инициализация данных в футере модалки
+    updateProductModalInfo(modalGameBuyRadioInitial);
+}
 
+modalGameBuyRadio.forEach((radio, id) => { // вещаем событие на change с условием изменения данных в футере
     radio.addEventListener("change", () => {
         updateProductModalInfo(radio);
     });

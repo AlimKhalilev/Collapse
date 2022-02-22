@@ -5549,7 +5549,10 @@ body::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-.regionSelector__item:not(:last-child) {
+.regionSelector__item--first {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
   margin-right: 0.625rem;
 }
 
@@ -9331,7 +9334,7 @@ body.compensate-for-scrollbar {
             flex-direction: column;
   }
 
-  .regionSelector__item:not(:last-child) {
+  .regionSelector__item--first {
     margin: 0 0 0.5rem 0;
   }
 
