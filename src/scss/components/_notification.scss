@@ -40,6 +40,10 @@
     &__icon {
         display: flex;
         margin-right: 1rem;
+
+        img {
+            min-width: 20px;
+        }
     }
 
     // .notification__text
@@ -60,5 +64,9 @@
         display: flex;
         margin-left: 0.5rem;
         @include cursorPointer();
+
+        img {
+            min-width: 12px;
+        }
     }
 }

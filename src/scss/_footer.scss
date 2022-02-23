@@ -137,8 +137,11 @@
 
     &__authorLink {
         font-weight: 600;
-        text-decoration: underline;
-        color: $color_purple;
+        color: $color_blue_zubov;
+
+        &--developed {
+            color: $color_purple;
+        }
     }
 }
 

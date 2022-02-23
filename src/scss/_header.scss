@@ -145,6 +145,10 @@
 .custom-logo-link {
     display: flex;
 
+    img {
+        max-width: initial;
+    }
+
     // .logo__icon
 
     &__icon {
