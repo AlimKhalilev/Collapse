@@ -20,6 +20,11 @@
     }
 }
 
+html :where(img) {
+    height: initial;
+    max-width: initial;
+}
+
 html, body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.75;

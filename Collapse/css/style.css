@@ -4059,6 +4059,11 @@ button.swiper-pagination-bullet {
   --notification-height: 3rem;
 }
 
+html :where(img) {
+  height: initial;
+  max-width: initial;
+}
+
 html,
 body {
   font-family: 'Montserrat', sans-serif;
